@@ -19,36 +19,29 @@
 	<script type="text/javascript" href="./js/button.js"></script>
 	<noscript>Sorry, your browser does not support JavaScript!</noscript>
 </head>
-<body id="page-top">
-	<nav class="navbar .transparent navbar-inverse navbar-fixed-top">
-      	<div class="container-fluid  header text-center">
-        	<div class="collapse navbar-collapse navbar-default" id="myNavbar" role="navigation">
-          		<ul class="nav navbar-nav">
-               		<div class="col-md-2">
-            			<li><a href="#aboutMe">About Me</a></li>	
-            		</div>
-            		<div class="col-md-2">
-            			<li><a href="#education">Education</a></li>	
-            		</div>
-            		<div class="col-md-2">
-            			<li><a href="#skills">Skills</a></li>	
-            		</div>
-            		<div class="col-md-2">
-            			<li><a href="#projects">Projects</a></li>	
-            		</div>
-            		<div class="col-md-2">
-            			<li><a href="#previousExperience">Previous Experience</a></li>	
-            		</div>
-               		<div class="col-md-2">
-            			<li><a href="#contactMe">Contact Me</a></li>	
-            		</div>
-           		</ul>
-        	</div>
-      	</div>
-    </nav>
+<body>
+	<div class="topnav" id="myNavbar">
+  		<a href="#aboutMe">About Me</a>
+  		<a href="#education">Education</a>
+  		<a href="#skills">Skills</a>
+  		<a href="#projects">Projects</a>
+  		<a href="#previousExperience">Previous Experience</a>
+  		<a href="#contactMe">Contact Me</a>
+  		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="bars()"><i class="fa fa-bars"></i></a>
+	</div>
+	<script>
+function bars() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 	<section id="section1" class="first">
 		<h1>Hello World! I am Ioanna.</h1>
-		<a href="#section2"><span></span></a>
+		<a href="#aboutMe"><span></span></a>
 		<script type="text/javascript">
 		var $root = $('html, body');
 		$('a[href^="#"]').click(function () {
@@ -59,20 +52,26 @@
 		});
 		</script>
 	</section>
+	
 	<div class="container-fluid" id="aboutMe">
-		<section id="section2">
-			<h2 class="title">
-				About Me
-			</h2>
-			<div class="col-md-3">
-				<img src="./img/me.jpg" alt="Ioanna Zapalidi" width="100%">
-			</div>
-			<div class="col-md-9">
+		<h2 class="title">
+				Who Am I?
+		</h2>
+		<div class="row">
+			<div class="col-md-12" id="about">
+				<img src="./img/me.jpg" alt="Ioanna Zapalidi" width="100%" class=" center-block responsive clearfix" id="moi">
 				<h3>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt pulvinar lectus, vitae maximus est blandit et. Proin varius nulla sed orci faucibus, vitae volutpat quam condimentum. Nam quam justo, posuere sed posuere non, elementum eu libero. Nam sit amet ipsum eu enim auctor auctor ac eu neque. Nam auctor vulputate odio eget dictum. Vivamus tellus leo, elementum quis nisi ac, fermentum vestibulum elit. Aenean suscipit accumsan magna a tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis sed est quis vestibulum. Curabitur ut neque mollis, consectetur orci non, tempor turpis.
+					Hello, I am Ioanna and I'm an entry-level/junior programmer. I'm constantly looking for opportunities to expand my knowledge level in multiple fields and help the world become a better place, starting with myself. <br>
+					My programming journey has lead me to realise I wish to help make the Internet a more accessible place for everyone. I aspire to become a full stack web developer, but I'm no stranger to programming (object-oriented, imperative, logical etc.), computer networks and, mathematics.<br>
+					I'm very interested in reading books on psychology, studying foreign languages and cultures, poetry and dancing.<br>
+					<br>
+					You can message me on my <a href="#contactMe">social media</a> to get in touch with me.
 				</h3>
 			</div>
-		</section>
+		</div>
+		<div class="line-gray text-center">
+			<span></span>
+		</div>
 	</div>
 	<div class="container-fluid" id="education">
 		<div class="title">
@@ -83,12 +82,15 @@
 		<div class="list" id="listEdu">
 			<ul>
 				<li>
-					<i>2014-present day</i> - Undergraduate Student of the Department of Informatics and Telecommunications, University of Athens, <b>GPA</b> (thus far estimated): <b>6.61/10</b>
+					<i>2014 - present day</i>: Undergraduate Student of the <a href="http://di.uoa.gr">Department of Informatics and Telecommunications</a>, University of Athens, <b>GPA</b> (thus far estimated): <b>6.61/10</b>
 				</li>
 				<li>
-					<i>2011-2014</i> - Student of Protypo Peiramatiko Lyceum of Agii Anargiri, <b>grade: Excellent, 19.4</b>
+					<i>2011 - 2014</i>: Student of Protypo Peiramatiko Lyceum of Agii Anargiri, <b>grade: Excellent, 19.4</b>
 				</li>
 			</ul>
+		</div>
+		<div class="line-gray text-center">
+			<span></span>
 		</div>
 	</div>
 	<div class="container-fluid" id="skills">
@@ -101,10 +103,10 @@
 			<button class="accordion">Languages</button>
 				<div class="panel">
 					<table>
-  						<tr>
-    						<th>Language</th>
+						<thead>
+    						<th>Language&nbsp;&nbsp;&nbsp;</th>
     						<th>Level</th>
-  						</tr>
+  						</thead>
   						<tr>
     						<td>Greek</td>
     						<td>Native</td>
@@ -122,10 +124,10 @@
 			<button class="accordion">IT Skills</button>
 				<div class="panel">
 					<table>
-  						<tr>
+  						<thead>
     						<th>Skill</th>
     						<th>Specifics</th>
-  						</tr>
+  						</thead>
   						<tr>
     						<td>Programming Languages</td>
     						<td>C, C++, Java (basics), Python 2.7, 3.5, Assembly (MIPS), HTML, PHP (basics), CSS(basics), SQL (MySQL), JavaScript</td>
@@ -163,6 +165,9 @@
 					</ul>			
 				</div>
 		</div>
+			<div class="line-gray text-center">
+		<span></span>
+	</div>
 	</div>
 	<script type="text/javascript">
 		var acc = document.getElementsByClassName("accordion");
@@ -227,12 +232,12 @@
 			</li>
 			<li>
 				<b>Simulation an online forum</b><br>
-				View it on <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%201"></i></a> (part 1) and <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%202"><i class="fa fa-github"></i></a> (part 2)<br>
+				View it on <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%201"><i class="fa fa-github"></i></a> (part 1) and <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%202"><i class="fa fa-github"></i></a> (part 2)<br>
 				<i>Technologies used: C++</i>
 			</li>
 			<li>
 				<b>A Simple RPG Game</b><br>
-				View it on <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%203"></i></a><br>
+				View it on <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%203"><i class="fa fa-github"></i></a><br>
 				<i>Technologies used: C++</i>
 			</li>
 		</ul>
@@ -275,9 +280,11 @@
 				<b>Assisting in the graphics design</b> for the game <a href="https://play.google.com/store/apps/details?id=com.Berrynauts.LaneSlide&hl=en">Lane Slide</a> by <a href="http://halisavakis.com/berrynauts/">Berrynauts Entertainment</a>.<br>
 				<i>Technologies Used: Gimp, Windows 10</i>
 			</li>
+			<li>
 				<b>An OpenGL project of a starry sky, with planets and stars radiating line</b><br>
 				View it on <a href="https://github.com/ZapDos7/Starry_Sky"><i class="fa fa-github"></i></a><br>
 				<i>Technologies Used: C, C++, OpenGL, Windows 10, Xubuntu</i>
+			</li>
 		</ul>
 		<h3 class="projectGenres">
 			Other Programs:
@@ -294,6 +301,9 @@
 				Various <a href="https://github.com/ZapDos7/Assembly_Projects">Assembly</a>, <a href="https://github.com/ZapDos7/Prolog_Projects">Prolog</a> and <a href="https://github.com/ZapDos7/LogicDesignLab_Xilinx">Xilinx</a> programs.
 			</li>
 		</ul>
+		<div class="line-gray text-center">
+			<span></span>
+		</div>
 	</div>
 	<div class="container-fluid" id="previousExperience">
 		<h2 class="title">
@@ -312,6 +322,9 @@
 					Technical support for the elections.
 				</li>
 			</ul>
+		</div>
+		<div class="line-gray text-center">
+			<span></span>
 		</div>
 	</div>
 	<div class="container-fluid" id="contactMe">
@@ -343,7 +356,6 @@
         	</div>
         </div>
     </div>
-
 	<div class="container-fluid footer text-center"> 
 		<div class="row align-items-center text-center" id="footer">
 			<h5>Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i> in Athens, Greece</h5>
