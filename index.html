@@ -20,25 +20,36 @@
 	<noscript>Sorry, your browser does not support JavaScript!</noscript>
 </head>
 <body>
-	<div class="topnav" id="myNavbar">
-  		<a href="#aboutMe">About Me</a>
-  		<a href="#education">Education</a>
-  		<a href="#skills">Skills</a>
-  		<a href="#projects">Projects</a>
-  		<a href="#previousExperience">Previous Experience</a>
-  		<a href="#contactMe">Contact Me</a>
-  		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="bars()"><i class="fa fa-bars"></i></a>
-	</div>
-	<script>
-function bars() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-</script>
+	<nav id="nav" class="nav">
+		<button class="menu">
+    		<em class="hamburger"></em>
+  		</button>
+  		<ul class="navbar">
+    		<li class="upper">
+      			<a href="#home">About Me</a>
+    		</li>
+    		<li>
+      			<a href="#about">Education</a>
+    		</li>
+    		<li>
+      			<a href="#services">Skills</a>
+    		</li>
+    		<li>
+      			<a href="#services">Projects</a>
+    		</li>
+    		<li>
+      			<a href="#previousExperience">Previous Experience</a>
+    		</li>
+    		<li>
+      			<a href="#contact">Projects</a>
+    		</li>
+        	<li>
+      			<a href="#contact">Contact</a>
+    		</li>
+		</ul>
+	</nav>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<sript src="./js/index.js"></script>
 	<section id="section1" class="first">
 		<h1>Hello World! I am Ioanna.</h1>
 		<a href="#aboutMe"><span></span></a>
@@ -52,7 +63,6 @@ function bars() {
 		});
 		</script>
 	</section>
-	
 	<div class="container-fluid" id="aboutMe">
 		<h2 class="title">
 				Who Am I?
@@ -165,11 +175,10 @@ function bars() {
 					</ul>			
 				</div>
 		</div>
-			<div class="line-gray text-center">
-		<span></span>
-	</div>
-	</div>
-	<script type="text/javascript">
+		<div class="line-gray text-center">
+			<span></span>
+		</div>
+		<script type="text/javascript">
 		var acc = document.getElementsByClassName("accordion");
 		var i;
 		for (i = 0; i < acc.length; i++) {
@@ -183,7 +192,8 @@ function bars() {
         		}
     		});
 		}
-	</script>
+		</script>
+	</div>
 	<div class="container-fluid" id="projects">
 		<h2 class="title">
 			My Projects
@@ -208,7 +218,8 @@ function bars() {
 			</li>
 			<li>
 				<b>30 JavaScript projects - Wes Bos' <a href="https://javascript30.com/">30-day course/challenge</a></b><br>
-				View the end results on <a href="https://github.com/ZapDos7/30DaysJS"><i class="fa fa-github"></i></a>
+				View the end results on <a href="https://github.com/ZapDos7/30DaysJS"><i class="fa fa-github"></i></a><br>
+				<i>Technologies used: HTML, CSS, JavaScript</i>
 			</li>
 		</ul>
 		<h3 class="projectGenres">
@@ -255,6 +266,7 @@ function bars() {
 			</li>
 			<li>
 				<b>Ratings managing applet (with the ability to find positive and negative scores and calculating scores)</b><br>View it on <a href="https://github.com/ZapDos7/Databases1_2017/tree/master/assignment3_omada58"><i class="fa fa-github"></i></a><br>
+				<i>Technologies used: SQLite, APSW</i>
 			</li>
 		</ul>
 		<h3 class="projectGenres">
@@ -264,12 +276,12 @@ function bars() {
 			<li>
 				<b>Implementation of block-level internal database functions - static and extendible hashing</b><br>
 				View it on <a href="https://github.com/ZapDos7/Databases2_2017/tree/master/ergasia_1/Ergasia%201%202016-2017"><i class="fa fa-github"></i></a><br>
-				<i>Technologies Used: C, Ubuntu</i>
+				<i>Technologies Used: C</i>
 			</li>
 			<li>
 				<b>Implementation of block-level internal database functions - sorting</b><br>
 				View it on <a href="https://github.com/ZapDos7/Databases2_2017/tree/master/ergasia_2"><i class="fa fa-github"></i></a><br>
-				<i>Technologies Used: C, Ubuntu</i>
+				<i>Technologies Used: C</i>
 			</li>
 		</ul>
 		<h3 class="projectGenres">
@@ -283,7 +295,7 @@ function bars() {
 			<li>
 				<b>An OpenGL project of a starry sky, with planets and stars radiating line</b><br>
 				View it on <a href="https://github.com/ZapDos7/Starry_Sky"><i class="fa fa-github"></i></a><br>
-				<i>Technologies Used: C, C++, OpenGL, Windows 10, Xubuntu</i>
+				<i>Technologies Used: C, C++, OpenGL</i>
 			</li>
 		</ul>
 		<h3 class="projectGenres">
@@ -291,7 +303,8 @@ function bars() {
 		</h3>
 		<ul>
 			<li>
-				<b>A prime number finder</b><br>View it on <a href="https://github.com/ZapDos7/Small_C_Programs/tree/master/Ergasia_1"><i class="fa fa-github"></i></a><br><i>Technologies used: C</i>
+				<b>A prime number finder</b><br>View it on <a href="https://github.com/ZapDos7/Small_C_Programs/tree/master/Ergasia_1"><i class="fa fa-github"></i></a>
+				<br><i>Technologies used: C</i>
 			</li>
 			<li>
 				<b>Indenting program for text and .c files</b><br>View it on <a href="https://github.com/ZapDos7/Small_C_Programs/tree/master/Ergasia_2"><i class="fa fa-github"></i></a> (for texts) and <a href="https://github.com/ZapDos7/Small_C_Programs/tree/master/Ergasia_3"><i class="fa fa-github"></i></a> (for C files)
@@ -330,28 +343,28 @@ function bars() {
 	<div class="container-fluid" id="contactMe">
 		<h2 class="title">You can find me all around the web on the following links:</h2>
 		<div class="row align-items-center text-center" id="links"> 
-      		<div class="col-sm-1 col-sm-offset-2">
+      		<div class="col-xs-1 col-xs-offset-2">
         		<a href="https://github.com/ZapDos7/"><i class="fa fa-github fa-2x"></i></a>
       		</div> 
-		    <div class="col-sm-1">
+		    <div class="col-xs-1">
         		<a href="https://twitter.com/ShizleGhizle"><i class="fa fa-twitter fa-2x"></i></a>
  		    </div> 
-    		<div class="col-sm-1">
+    		<div class="col-xs-1">
         		<a href="https://www.linkedin.com/in/ioanna-zapalidi-2a9728130/"><i class="fa fa-linkedin fa-2x"></i></a>
       		</div> 
-	 		<div class="col-sm-1">
+	 		<div class="col-xs-1">
         		<a href="mailto:ioanna.zapalidi@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
       		</div>
-			<div class="col-sm-1">
+			<div class="col-xs-1">
         		<a href="https://plus.google.com/u/0/+JeanZapdos"><i class="fa fa-google-plus fa-2x"></i></a>
       		</div>
-		    <div class="col-sm-1">
+		    <div class="col-xs-1">
         		<a href="https://stackoverflow.com/users/7436412/zap"><i class="fa fa-stack-overflow fa-2x"></i></a>
       		</div> 
-		    <div class="col-sm-1">
+		    <div class="col-xs-1">
         		<a href="codepen.io/IoannaZapalidi/"><i class="fa fa-codepen fa-2x"></i></a>
         	</div>
-        	<div class="col-sm-1">
+        	<div class="col-xs-1">
         		<a href="https://www.facebook.com/ioanna.zap"><i class="fa fa-facebook-square fa-2x"></i></a>
         	</div>
         </div>
