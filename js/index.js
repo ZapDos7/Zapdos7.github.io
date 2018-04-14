@@ -32,3 +32,18 @@ $(".menu").click(function(){
   
   $("#nav").toggleClass("open");
 });
+      //....................change nav when while scrolling......................
+function onScroll(event){
+  var scrollPos = $(document).scrollTop();
+//console.log('SCROLL '+(new Date).getTime());
+  $('.navbar ul li a').removeClass("activation");
+  $('.navbar a').each(function () {
+    var $currLink = $(this);
+    var $refElement = $($currLink.attr("href"));
+    if (!$refElement.length) return;
+    if ($refElement.position().top <= scrollPos && ($refElement.position().top + $refElement.height()) > scrollPos) {
+      $currLink.addClass("activation");
+    }
+  });
+}
+$(document).on("scroll", onScroll);

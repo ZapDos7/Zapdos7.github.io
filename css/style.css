@@ -12,12 +12,16 @@ body {
     color: white;
     height: 100%;
     background-color: #A9A9A9 !important;
+    position: relative; /* important for scrollspy */
 }
 html {
   height: 100%;
 }
 .navbar {
   margin-bottom: 0!important;
+}
+.navbar>li {
+	color: black !important;
 }
 section {
   position: relative;
@@ -181,16 +185,16 @@ section h1 {
 	font-size: 120%;
 	overflow: hidden;
 }
-/*#about>h3>*/a {
+a {
 	display: inline-block;
 	position: relative;
 	color: #d3d3d3 !important;
   font-weight: bold;
 }
-/*#about>h3>*/a:hover {
+a:hover {
   text-decoration: none !important;
 }
-/*#about>h3>*/a::after {
+a::after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -316,45 +320,6 @@ thead {
 	font-size: 130%;
 }
 
-
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
-  }
-
-  table thead th {
-    display: none;
-  }
-
-  table tr {
-    display: block;
-  }
-
-  table td {
-    /* border-bottom: 1px solid #ddd; */
-    display: block;
-    text-align: left;
-  }
-
-  table td::before {
-    content: attr(data-label);
-    display: block;
-    font-weight: light;
-    text-transform: uppercase;
-    font-size: 0.7em;
-    margin-bottom: 0.6em;
-    color: #1976d2;
-  }
-
-  table td:last-child {
-    border-bottom: 0;
-  }
-}
-
 #links {
 	padding-top: 5%;
 	padding-bottom: 2%;
@@ -465,7 +430,6 @@ thead {
 }
 
 .nav ul li a {
-  color: #eee;
   text-decoration: none;
 }
 
@@ -499,7 +463,11 @@ thead {
 .upper {
   padding-left: 15% !important;
 }
-
+@media (min-width: 1000px) {
+  .upper {
+    padding-left: 25% !important;
+  }
+}
 @media (max-width: 800px) {
   #section1>h1 {
     /*word-wrap: break-word;*/
