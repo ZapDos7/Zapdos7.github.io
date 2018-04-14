@@ -105,11 +105,23 @@ section h1 {
     transform: rotate(-45deg) translate(0, 0);
   }
 }
+
 .title {
 	padding-left: 10%;
-	padding-top: 2%;
 	padding-bottom: 2%;
 	font-family: 'Josefin Sans';
+}
+#aboutMe>.title {
+  padding-top: 10%;
+}
+#education>.title, #skills>.title, #previousExperience>.title {
+  padding-top: 15%;
+}
+#projects>.title {
+  padding-top: 10%;
+}
+#contactMe>.title {
+  padding-top: 2%;
 }
 #aboutMe {
 	padding-right: 6%;
@@ -173,6 +185,7 @@ section h1 {
 	display: inline-block;
 	position: relative;
 	color: #d3d3d3 !important;
+  font-weight: bold;
 }
 /*#about>h3>*/a:hover {
   text-decoration: none !important;
@@ -357,9 +370,7 @@ thead {
 .row>.col-xs-1 {
 	padding: 10px;
 }
-.fa:hover {
-	color: gray;
-}
+
 #footer {
 	padding-top: 5%; 
 }
@@ -474,7 +485,6 @@ thead {
 }
 
 .pattern-overlay {
-  background: rgba(0, 0, 0, 0.3) url("http://codemydesign.ru/CMDSpace/image/css/images/overlay.png") repeat;
   height: 100%;
   left: 0;
   position: fixed;
@@ -486,10 +496,18 @@ thead {
 .menu {
   display: none;
 }
+.upper {
+  padding-left: 15% !important;
+}
 
 @media (max-width: 800px) {
+  #section1>h1 {
+    /*word-wrap: break-word;*/
+    font-size: 280%;
+  }
   .upper {
     padding-top: 60px !important;
+    padding-left: 0 !important;
   }
   .sticky .menu {
     top: 0;
