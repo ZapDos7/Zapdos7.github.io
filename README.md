@@ -1,3 +1,3 @@
 # Zapdos7.github.io
-My Github Page, visit zapdos7.github.io to check it out!
+[My GitHub Page](https://zapdos7.github.io) <br>
 Made with ❤️ by me
