@@ -1,7 +1,6 @@
 /*http://callmenick.com/post/expanding-search-bar-using-css-transitions*/
 (function($) {
     "use strict";
-  
     var $navbar = $(".nav"),
         y_pos = $navbar.offset().top,
         height = $navbar.height();
@@ -15,7 +14,6 @@
           $navbar.removeClass("sticky");  
         }
     });
-    
     //section sticky
     /*$(document).scroll(function() {
         var scrollTop = $(this).scrollTop();
@@ -25,14 +23,9 @@
           $navbar.addClass("sticky");  
         }
     });*/
-
 })(jQuery, undefined);
 
-$(".menu").click(function(){
-  
-  $("#nav").toggleClass("open");
-});
-//....................change nav when while scrolling......................
+//change nav when while scrolling
 function onScroll(event){
   var scrollPos = $(document).scrollTop();
 //console.log('SCROLL '+(new Date).getTime());
@@ -48,21 +41,14 @@ function onScroll(event){
 }
 $(document).on("scroll", onScroll);
 
-/*
-function openNav() {
-  hamburger.classList.add("is-active");
-  document.getElementById("popUpNav").style.display = "block";
-}
-
-function closeNav() {
-  hamburger.classList.remove("is-active");
-  document.getElementById("popUpNav").style.display = "none";
-}
-
-// Hamburger Menu Spin
-var hamburger = document.querySelector(".hamburger");
-
-hamburger.addEventListener('click', () => hamburger.classList.contains('is-active') ? closeNav() : openNav());
-
-closeNav();
-*/
+////hamburger open/close
+$(document).ready(function() {
+  $(".menu").click(function(){
+    if ( $("#nav").hasClass("open") ) {
+      $("#nav").removeClass("open");  
+    }
+    else {
+      $("#nav").addClass("open");  
+    }
+  });
+});
