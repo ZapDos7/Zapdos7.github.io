@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-	<title>
-		Ioanna Zapalidi
-	</title>
+	<title>Ioanna's Page</title>
 	<!-- Custom style for this template -->
 	<link rel="stylesheet" type="text/css" href="./css/style.css" />
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Font Awesome for Social Media Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="./img/fav.ico">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" href="./js/button.js"></script>
@@ -30,6 +28,9 @@
       			<a href="#aboutMe">About Me</a>
     		</li>
     		<li>
+      			<a href="#previousExperience">Previous Experience</a>
+    		</li>
+    		<li>
       			<a href="#education">Education</a>
     		</li>
     		<li>
@@ -38,15 +39,13 @@
     		<li>
       			<a href="#projects">Projects</a>
     		</li>
-    		<li>
-      			<a href="#previousExperience">Previous Experience</a>
-    		</li>
         	<li>
       			<a href="#contactMe">Contact</a>
     		</li>
 		</ul>
 	</nav>
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/index.js"></script>
 	<section id="section1" class="first">
 		<h1>Hello World! I am Ioanna.</h1>
@@ -68,6 +67,15 @@
 		<div class="row">
 			<div class="col-md-12" id="about">
 				<img src="./img/me.jpg" alt="Ioanna Zapalidi" width="100%" class=" center-block responsive clearfix" id="moi">
+				<script type="text/javascript">
+					$(window).resize(function() {
+						if ($(this).width() < 1024) {
+							$('#moi').hide();
+						} else {
+							$('#moi').show();
+						}
+					});
+				</script>
 				<h3>
 					Hello, I am Ioanna and I'm an entry-level/junior programmer. I'm constantly looking for opportunities to expand my knowledge level in multiple fields and help the world become a better place, starting with myself. <br>
 					I specialize in software development and data handling, and I'm additionally intersted in Machine Learning.
@@ -77,6 +85,28 @@
 					You can message me on my <a href="#contactMe">social media</a> to get in touch with me.
 				</h3>
 			</div>
+		</div>
+		<div class="line-gray text-center">
+			<span></span>
+		</div>
+	</div>
+	<div class="container-fluid" id="previousExperience">
+		<h2 class="title">
+			My Previous Experience
+		</h2>
+		<div class="list" id="listPrEx">
+			<ul>
+				<li>
+					<b>Volunteer Software Developer</b> for <i><a href="http://www.scify.gr/site/en/">SciFY Not-for-Profit Company</a></i>, April 2017 - December 2017.<br>
+					<i>Cause: Human Rights</i><br>
+					Our main goal was to ameliorate the <a href="http://www.gamesfortheblind.org/">gamesfortheblind.org</a> site, so that it would be easier to access for both visually impaired people and the rest. We mainly worked with WordPress for this goal, and used Slack for our communication and Trello for managing our tasks.
+				</li>
+				<li>
+					<b>Volunteer IT Support</b> for the <i><a href="http://portal.tee.gr/portal/page/portal/TEE/TCG">Technical Chamber of Greece</a></i>, November 2016.<br>
+					<i>Cause: Civil Rights</i><br>
+					IT support for the elections of 2016.
+				</li>
+			</ul>
 		</div>
 		<div class="line-gray text-center">
 			<span></span>
@@ -346,38 +376,8 @@
 			<span></span>
 		</div>
 	</div>
-	<div class="container-fluid" id="previousExperience">
-		<h2 class="title">
-			My Previous Experience
-		</h2>
-		<div class="list" id="listPrEx">
-			<ul>
-				<li>
-					<b>Volunteer Software Developer</b> for <i><a href="http://www.scify.gr/site/en/">SciFY Not-for-Profit Company</a></i>, April 2017 - December 2017.<br>
-					<i>Cause: Human Rights</i><br>
-					Our main goal was to ameliorate the <a href="http://www.gamesfortheblind.org/">gamesfortheblind.org</a> site, so that it would be easier to access for both visually impaired people and the rest. We mainly worked with WordPress for this goal, and used Slack for our communication and Trello for managing our tasks.
-				</li>
-				<li>
-					<b>Volunteer IT Support</b> for the <i><a href="http://portal.tee.gr/portal/page/portal/TEE/TCG">Technical Chamber of Greece</a></i>, November 2016.<br>
-					<i>Cause: Civil Rights</i><br>
-					IT support for the elections of 2016.
-				</li>
-			</ul>
-		</div>
-		<div class="line-gray text-center">
-			<span></span>
-		</div>
-	</div>
 	<div>
-<!--<div class="joke">
-		<div id="joke-btn">
-			<a href="https://c.xkcd.com/random/comic/" button type="button" class="btn btn-light"type="submit" target="_blank" id="myJoke" aria-pressed="false" data-toggle="button">Want to laugh?</button>	
-		</div>	
-		
-	</div>
-	<div class="line-gray text-center">
-			<span></span>
-	</div>-->	<div class="container-fluid" id="contactMe">
+	<div class="container-fluid" id="contactMe">
 		<h2 class="title">You can find me all around the web on the following links:</h2>
 		<div class="row align-items-center text-center" id="links"> 
       		<div class="col-xs-1 col-xs-offset-2">

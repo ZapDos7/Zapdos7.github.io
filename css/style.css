@@ -18,10 +18,10 @@ html {
   height: 100%;
 }
 .navbar {
-  margin-bottom: 0!important;
+  margin-bottom: 0; /*!important*/
 }
 .navbar>li {
-	color: black !important;
+	color: black;/*!important*/
 }
 section {
   position: relative;
@@ -184,6 +184,9 @@ section h1 {
 #myNavbar{
 	font-size: 120%;
 	overflow: hidden;
+}
+.navbar>li>a::before {
+  color: #282828 !important;
 }
 a {
 	display: inline-block;
