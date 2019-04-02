@@ -43,14 +43,22 @@ $(document).on("scroll", onScroll);
 
 ////hamburger open/close
 $(document).ready(function() {
+<<<<<<< HEAD
   /*$(".menu").click(function(){
+=======
+  $(".menu").click(function(){
+>>>>>>> 4eb9df8ea253de0a302091be64ae677920d9b543
     if ( $("#nav").hasClass("open") ) {
       $("#nav").removeClass("open");  
     }
     else {
       $("#nav").addClass("open");  
+<<<<<<< HEAD
     }*/
     $(".menu").on("click", function () {
 		$("#nav").toggleClass("open");
+=======
+    }
+>>>>>>> 4eb9df8ea253de0a302091be64ae677920d9b543
   });
 });
