@@ -127,6 +127,13 @@ section h1 {
 #contactMe>.title {
   padding-top: 2%;
 }
+#contactMe {
+  background-image:
+    linear-gradient(
+      to bottom, 
+      #a9a9a9, #2f2f2f
+    );
+}
 #aboutMe {
 	padding-right: 6%;
 }
@@ -340,7 +347,8 @@ thead {
 }
 
 #footer {
-	padding-top: 5%; 
+	padding-top: 5%;
+  color: #000000
 }
 #previousExperience>#listPrEx>ul {
 	list-style-type: square;
