@@ -47,7 +47,7 @@ $(document).ready(function() {
     if ( $("#nav").hasClass("open") ) {
       $("#nav").removeClass("open");  
     }
-    else {
+    else { //toggleClass("open");
       $("#nav").addClass("open");  
     }
   })
