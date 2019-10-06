@@ -27,7 +27,7 @@ html {
   padding-right: 10%;
 }
 .nav {
-  
+  text-align: center;
   transition: all .5s ease;
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;
@@ -93,6 +93,9 @@ html {
 }
 /**/
 @media (max-width: 800px) {
+  .firstNavLink {
+    padding-top: 15% !important;
+  }
   #section1>h1 {
     font-size: 280%;
   }
@@ -186,17 +189,11 @@ html {
     -ms-transform: translateY(-8px);
     transform: translateY(-8px);
   }
-/*
-  //.collapse nav{
-   // -webkit-transform:translateY(-100%);
-    //-ms-transform:translateY(-100%);
-    //transform:translateY(-100%);
-  //}*/
   .navbar {
     -webkit-transition: -webkit-transform 150ms;
     transition: transform 150ms;
+    background-color: white !important;
   }
-
   ul.navbar {
     -webkit-transform: translate(-100%, 0);
     -ms-transform: translate(-100%, 0);
@@ -215,17 +212,17 @@ html {
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-  #nav {
+  .nav {
     height: 100px;
   }
-  #nav.open {
+  .nav.open {
     height: auto;
     min-height: 100%;
   }
-  #nav.sticky {
+  .nav.sticky {
     height: 60px;
   }
-  #nav .open.sticky {
+  .nav .open.sticky {
     height: auto;
   }
 }
@@ -498,6 +495,10 @@ thead {
 #projects>ul>li {
 	font-size: 120%;
 }
+.translations-ul {
+  list-style: square;
+  padding-left: 5%;
+}
 
 /*Contact Me*/
 #links {
@@ -515,6 +516,11 @@ thead {
 
 /*Footer*/
 #footer>h5 {
+	font-family: 'Josefin Sans';
+	font-weight: bold;
+	color: gray;
+}
+#footer>h6 {
 	font-family: 'Josefin Sans';
 	font-weight: bold;
 	color: gray;
