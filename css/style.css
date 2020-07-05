@@ -500,6 +500,20 @@ thead {
   padding-left: 5%;
 }
 
+/* Seminars */
+
+#seminars>ul {
+	padding-left: 10%;
+	padding-right: 5%;
+	padding-top: 1%;
+	padding-bottom: 2%;
+	font-family: 'Colaborate';
+	font-size: 120%;
+}
+#seminars>ul>li {
+	font-size: 120%;
+}
+
 /*Contact Me*/
 #links {
 	padding-top: 5%;
