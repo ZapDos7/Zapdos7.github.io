@@ -38,5 +38,5 @@ $(document).ready(function() {
 function closeMenu()
 {
   $(".nav").removeClass("open");
-  //console.log("time to remove OPEN class from menu");
+  console.log("time to remove OPEN class from menu");
 }
