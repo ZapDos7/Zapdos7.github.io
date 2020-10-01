@@ -88,21 +88,19 @@ html {
 .nav open>button{
   border-color: #000000;
 }
-@media (max-width: 1000px) {
-  .navbar {
-    padding-left: 0%;
-    padding-right: 0%;
-  }
-  #section1>.alternativeText
-  {
-    visibility: hidden;
-  }
-  #section1>.initialText
-  {
-    visibility: visible;
-  }
+
+.navbar {
+  padding-left: 0%;
+  padding-right: 0%;
 }
-/**/
+#section1>.alternativeText
+{
+  visibility: hidden;
+}
+#section1>.initialText
+{
+  visibility: visible;
+}
 @media (max-width: 800px) {
   .firstNavLink {
     padding-top: 15% !important;
