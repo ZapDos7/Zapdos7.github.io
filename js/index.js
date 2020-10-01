@@ -17,18 +17,26 @@
 })(jQuery, undefined);
 
 
-////hamburger open/close
+//hamburger open/close
 $(document).ready(function() {
   $(".nav").click(function(){
+    //toggleClass("open"); //doesnt work
     if ($(".nav").hasClass("open")) {
       $(".nav").removeClass("open");  
     }
-    /*
-    else if ($(".nav").hasClass("open")==false){ //toggleClass("open");
-      $(".nav").addClass("open");
-    }*/
-    else { //toggleClass("open");
+    else { 
       $(".nav").addClass("open");  
     }
   })
 });
+
+//close menu upon clicking a li element and moving there:
+$(document).ready(function() {
+  $(".nav").find("a").on("click", closeMenu);
+});
+
+function closeMenu()
+{
+  $(".nav").removeClass("open");
+  //console.log("time to remove OPEN class from menu");
+}
