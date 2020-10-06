@@ -584,9 +584,10 @@ thead {
 	padding-top: 5%;
   color: #000000
 }
+/*
 .sourcererS {
   font-size: x-large;
-}
+}*/
 * > .fa.fa-hover-show,
 *:hover > .fa.fa-hover-hidden {
   display: none;
