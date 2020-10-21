@@ -3,3 +3,4 @@
 Made with ❤️ by me
 <br>
 *Technologies used:* HTML5, CSS (Bootstrap), JavaScript
+[Possible Colour Paletter](https://coolors.co/d4a79e-c4c9c3-1e3030-8e959d-676d21) <br>
