@@ -1,61 +1,73 @@
-/*http://callmenick.com/post/expanding-search-bar-using-css-transitions*/
-(function($) {
+$(document).ready(function() {
     "use strict";
-    var $navbar = $(".nav"),
-        y_pos = $navbar.offset().top,
-        height = $navbar.height();
 
-    //scroll top 0 sticky
-    $(document).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        if (scrollTop > 0) {
-            $navbar.addClass("sticky");
-        } else {
-            $navbar.removeClass("sticky");
+    // 1. Smooth Scrolling for all internal links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+
+            // Offset calculation: 60px is the height of your fixed navbar
+            // This prevents the header from covering your section titles
+            var navHeight = $('.main-nav').outerHeight();
+
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - navHeight
+            }, 800); // 800ms for the scroll speed
+
+            // If on mobile, close the hamburger menu after clicking
+            $("#nav-toggle").prop("checked", false);
         }
     });
-})(jQuery, undefined);
 
+    // 2. Hamburger Menu: Auto-close when a link is clicked
+    // Since we use a CSS checkbox (#nav-toggle), we just need to uncheck it
+    $(".nav-links a").on("click", function() {
+        $("#nav-toggle").prop("checked", false);
+    });
 
-//hamburger open/close
-$(document).ready(function() {
-    $(".nav").click(function() {
-        //toggleClass("open"); //doesnt work
-        if ($(".nav").hasClass("open")) {
-            $(".nav").removeClass("open");
+    // 3. Back to Top Button Logic
+    var mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            mybutton.style.display = "block";
         } else {
-            $(".nav").addClass("open");
+            mybutton.style.display = "none";
         }
-    })
+    };
 });
 
-//close menu upon clicking a nav>ul>li>a element and moving there:
-$(document).ready(function() {
-    $(".nav").find("a").on("click", closeMenu);
-});
-
-function closeMenu() {
-    $(".nav").removeClass("open");
-    //console.log("time to remove OPEN class from menu");
-}
-
-/*Button to top by W3S */
-//Get the button:
-mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
+// 4. Back to Top Function (Global)
 function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    $('html, body').stop().animate({
+        scrollTop: 0
+    }, 800);
 }
+
+$(window).on('scroll', function() {
+    var scrollDistance = $(window).scrollTop();
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + scrollDistance;
+
+    // A. Fix for the "Contact" (Bottom of page)
+    // If the distance from the bottom is less than 10px, highlight Contact
+    if ((scrollHeight - scrollPosition) / scrollHeight <= 0.01) {
+        $('.nav-links a').removeClass('active');
+        $('.nav-links a[href="#contact"]').addClass('active');
+        return; // Exit function so it doesn't get overridden by section loop
+    }
+
+    // B. Fix for "About Me" and other sections
+    $('section, .container-fluid').each(function() {
+        var targetSection = $(this);
+        // We use 100px as a buffer to account for the fixed nav height
+        if (targetSection.position().top <= scrollDistance + 100) {
+            var id = targetSection.attr('id');
+            if (id) {
+                $('.nav-links a').removeClass('active');
+                $('.nav-links a[href="#' + id + '"]').addClass('active');
+            }
+        }
+    });
+});

@@ -1,737 +1,416 @@
-/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-
-/* See https://codepen.io/nxworld/pen/OyRrGy for more */
-
-@font-face {
-	font-family: 'Colaborate';
-	src: url('../otfs/Colab/ColabLig.otf');
-}
-
-
-/* Entire Page*/
-
-body {
-	color: white;
-	height: 100%;
-	background-color: #A9A9A9 !important;
-	position: relative;
-	/* important for scrollspy */
+:root {
 }
 
 html {
-	height: 100%;
+    scroll-behavior: smooth;
+    /* This should match the height of your navbar */
+    scroll-padding-top: 70px;
 }
 
-
-/* NavBar */
-
-.navbar {
-	padding-left: 10%;
-	padding-right: 10%;
-}
-
-.nav {
-	text-align: center;
-	transition: all .5s ease;
-	font-size: 12px;
-	font-family: 'Open Sans', sans-serif;
-	width: 100%;
-	z-index: 100;
-	position: absolute;
-	/* bottom: 0; */
-	left: 0;
-	letter-spacing: 2px;
-	line-height: 100px;
-	-webkit-transition-property: background-color, box-shadow, line-height, height;
-	transition-property: background-color, box-shadow, line-height, height;
-	-webkit-transition-timing-function: cubic-bezier(0.78, 0.13, 0.15, 0.86);
-	transition-timing-function: cubic-bezier(0.78, 0.13, 0.15, 0.86);
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-}
-
-.nav ul {
-	margin: 0;
-}
-
-.nav ul li {
-	text-align: center;
-	display: inline-block;
-	list-style: none;
-	padding: 15px 15px;
-	cursor: pointer;
-	line-height: 30px;
-}
-
-.sticky {
-	position: fixed !important;
-	top: 0;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-	/* box-shadow: 0 4px 5px -2px rgba(0,0,0,0.22), 0 2px 1px -1px rgba(0,0,0,0.05); */
-	background-color: #fff;
-	line-height: 30px;
-}
-
-.sticky ul li a {
-	color: #6E7982;
-}
-
-.sticky ul li:hover a {
-	color: #E33B00;
-}
-
-.pattern-overlay {
-	height: 100%;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 0;
-}
-
-.menu {
-	display: none;
-}
-
-.nav open>button {
-	border-color: #000000;
-}
-
-.navbar {
-	padding-left: 0%;
-	padding-right: 0%;
-}
-
-#section1>.alternativeText {
-	visibility: hidden;
-}
-
-#section1>.initialText {
-	visibility: visible;
-}
-
-@media (max-width: 800px) {
-	.firstNavLink {
-		padding-top: 15% !important;
-	}
-
-	#section1>h1 {
-		font-size: 280%;
-	}
-
-	#section1>.alternativeText {
-		visibility: hidden;
-	}
-
-	#section1>.initialText {
-		visibility: visible;
-	}
-
-	.sticky .menu {
-		top: 0;
-	}
-
-	.sticky .menu .hamburger {
-		background: #6E7982;
-	}
-
-	.sticky .menu .hamburger::before,
-	.sticky .menu .hamburger::after {
-		background: #6E7982;
-	}
-
-	.open.sticky .hamburger {
-		background: transparent;
-	}
-
-	.open .hamburger {
-		background-color: transparent;
-	}
-
-	.open .hamburger::before {
-		-webkit-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		transform: rotate(45deg);
-	}
-
-	.open .hamburger::after {
-		-webkit-transform: rotate(-45deg) translate(2px, -2px);
-		-ms-transform: rotate(-45deg) translate(2px, -2px);
-		transform: rotate(-45deg) translate(2px, -2px);
-	}
-
-	.menu {
-		display: block;
-		outline: none;
-		position: relative;
-		line-height: 60px;
-		float: left;
-		left: 20px;
-		top: 20px;
-		width: 60px;
-		height: 60px;
-		background: none;
-		border: 0;
-		padding: 0;
-		margin: 0;
-		cursor: pointer;
-		opacity: 0.7;
-		-webkit-transition: opacity 150ms;
-		transition: opacity 150ms;
-	}
-
-	.menu:hover {
-		opacity: 1;
-	}
-
-	.hamburger,
-	.hamburger::after,
-	.hamburger::before {
-		margin: 0 auto;
-		display: block;
-		width: 24px;
-		height: 3px;
-		line-height: 0;
-		-webkit-transition: all 150ms;
-		transition: all 150ms;
-	}
-
-	.hamburger::before {
-		content: '';
-		-webkit-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		transform: rotate(45deg);
-		background: #fff;
-	}
-
-	.hamburger::after {
-		content: '';
-		-webkit-transform: rotate(-45deg) translate(2px, -2px);
-		-ms-transform: rotate(-45deg) translate(2px, -2px);
-		transform: rotate(-45deg) translate(2px, -2px);
-		background: #fff;
-	}
-
-	.hamburger {
-		background: #fff;
-	}
-
-	.hamburger::after {
-		-webkit-transform: translateY(5px);
-		-ms-transform: translateY(5px);
-		transform: translateY(5px);
-	}
-
-	.hamburger::before {
-		-webkit-transform: translateY(-8px);
-		-ms-transform: translateY(-8px);
-		transform: translateY(-8px);
-	}
-
-	.navbar {
-		-webkit-transition: -webkit-transform 150ms;
-		transition: transform 150ms;
-		background-color: white !important;
-	}
-
-	ul.navbar {
-		-webkit-transform: translate(-100%, 0);
-		-ms-transform: translate(-100%, 0);
-		transform: translate(-100%, 0);
-		/*transform: translateY(-200%);*/
-		padding-left: 0;
-	}
-
-	ul.navbar li {
-		line-height: calc((100vh - 160px) / 7);
-		display: block;
-		padding: 0;
-	}
-
-	.open .navbar {
-		-webkit-transform: translate(0, 0);
-		-ms-transform: translate(0, 0);
-		transform: translate(0, 0);
-	}
-
-	.nav {
-		height: 100px;
-	}
-
-	.nav.open {
-		height: auto;
-		min-height: 100%;
-	}
-
-	.nav.sticky {
-		height: 60px;
-	}
-
-	.nav .open.sticky {
-		height: auto;
-	}
-}
-
-@media (max-width: 750px) {
-	#section1>.initialText {
-		visibility: hidden;
-		font-size: small;
-	}
-
-	#section1>.alternativeText {
-		visibility: visible;
-	}
-
-	.nav>.firstNavLink {
-		padding-right: 27%;
-	}
-}
-
-@media (max-width: 400px) {
-	.nav>.firstNavLink {
-		padding-right: 17%;
-	}
-
-	.title {
-		padding-top: 30% !important;
-	}
-}
-
-
-/*Links*/
-
-.navbar>li>a::before {
-	color: #282828 !important;
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--slate);
+    background-color: var(--silver);
+    margin: 0;
 }
 
 a {
-	display: inline-block;
-	position: relative;
-	color: #d3d3d3 !important;
-	font-weight: bold;
+    color: var(--olive);
+    text-decoration: none;
+    transition: 0.3s;
 }
+a:hover { color: var(--mauve-shadow); }
 
-a:hover {
-	text-decoration: none !important;
-}
-
-a::after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	transform: scaleX(0);
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: #d3d3d3;
-	transform-origin: bottom right;
-	transition: transform 0.25s ease-out;
-}
-
-a:hover::after {
-	transform: scaleX(1);
-	transform-origin: bottom left;
-}
-
-
-/*Top Section that points downwards*/
-
-section {
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-section::after {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	content: '';
-	width: 100%;
-	height: 80%;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.34) 80%, rgba(0, 0, 0, 0.51) 100%);
-}
-
-section h1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 2;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	color: #fff;
-	font: normal 300 64px/1 'Josefin Sans', sans-serif;
-	text-align: center;
-	white-space: nowrap;
-}
-
-#section1 {
-	background: url(../img/pc10.jpg) center center / cover no-repeat;
-	/* Pictures by https://pixabay.com/ - no copyright images */
-}
-
-#section1 a {
-	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	z-index: 2;
-	display: inline-block;
-	-webkit-transform: translate(0, -50%);
-	transform: translate(0, -50%);
-	color: #fff;
-	font: normal 400 20px/1 'Josefin Sans', sans-serif;
-	letter-spacing: .1em;
-	text-decoration: none;
-	transition: opacity .3s;
-}
-
-#section1 a:hover {
-	opacity: .5;
-}
-
-#section1 a {
-	padding-top: 60px;
-}
-
-#section1 a span {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 24px;
-	height: 24px;
-	margin-left: -12px;
-	border-left: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	-webkit-animation: sdb04 2s infinite;
-	animation: sdb04 2s infinite;
-	box-sizing: border-box;
-}
-
-
-/*For each section*/
-
-.title {
-	padding-left: 10%;
-	padding-bottom: 2%;
-	font-family: 'Josefin Sans';
-	padding-top: 10%;
-}
-
-
-/*List Edu and List Previous Experience*/
-
-.list {
-	padding-left: 10%;
-	font-size: 110%;
-}
-
-
-/*About Me*/
-
-.responsive {
-	float: left;
-	position: relative;
-	/*transform: translateY(40%);*/
-	margin-right: 20%;
-	overflow: auto;
-}
-
-.clearfix::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-
-#moi {
-	width: 20%;
-	height: 20%;
-	padding-right: 2%;
-	padding-bottom: 1%;
-	padding-top: 1%;
-}
-
-#about {
-	padding-left: 10%;
-	padding-right: 5%;
-	padding-top: 1%;
-	padding-bottom: 8%;
-	font-family: 'Colaborate';
-}
-
-
-/*Previous Experience*/
-
-#listPrEx>ul {
-	list-style-type: square;
-}
-
-#listPrEx>ul>li {
-	font-size: 130%;
-}
-
-#listPrEx {
-	padding-left: 10%;
-	padding-right: 5%;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	font-family: 'Colaborate';
-}
-
-
-/*Education*/
-
-#listEdu {
-	padding-left: 10%;
-	padding-right: 5%;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	font-family: 'Colaborate';
-	font-size: 120%;
-}
-
-#listEdu>ul {
-	padding-left: 10%;
-	list-style-type: square;
-}
-
-#listEdu>ul>li {
-	padding-right: 10%;
-	font-size: 130%;
-}
-
-/* Skills */
-
-.panel {
-	padding: 0 18px;
-	background-color: white;
-	overflow: hidden;
-}
-
-table {
-	border-collapse: collapse;
-	width: 90%;
-}
-
-td,
-th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 8px;
-}
-
-th {
-	font-size: .85em;
-	letter-spacing: .1em;
-	background: #d3d3d3;
-}
-
-tr:nth-child(even) {
-	background-color: #f0f0f0;
-}
-
-#education {
-	padding-top: 0%;
-}
-
-#bigTable {
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-top: 5%;
-	padding-bottom: 10%;
-	font-family: 'Colaborate';
-	table-layout: fixed;
-	border-collapse: collapse;
-}
-
-#bigTable>div.panel {
-	padding-bottom: 3%;
-	padding-top: 3%;
-	padding-left: 10%;
-	padding-right: 3%;
-}
-
-thead {
-	font-size: 140%;
-	border-bottom: none;
-}
-
-#bigTable>div>table>tbody>tr>td {
-	font-size: 130%;
-}
-
-#bigTable>div>ul {
-	list-style-type: square;
-	padding-left: 10%;
-	padding-top: 2%;
-	padding-bottom: 1%;
-}
-
-#bigTable>div>ul>li {
-	font-size: 130%;
-}
-
-
-/*Skills*/
-
-
-/*Projects*/
-
-#projects>h3 {
-	font-family: 'Josefin Sans';
-}
-
-#projects>ul {
-	padding-left: 10%;
-	padding-right: 5%;
-	padding-top: 1%;
-	padding-bottom: 2%;
-	font-family: 'Colaborate';
-	font-size: 120%;
-}
-
-.projectGenres {
-	padding-left: 10%;
-	padding-top: 2%;
-}
-
-#projects>ul>li {
-	font-size: 120%;
-}
-
-.translations-ul {
-	list-style: square;
-	padding-left: 5%;
-}
-
-
-/* Seminars */
-
-#seminars>ul {
-	padding-left: 10%;
-	padding-right: 5%;
-	padding-top: 1%;
-	padding-bottom: 2%;
-	font-family: 'Colaborate';
-	font-size: 120%;
-}
-
-#seminars>ul>li {
-	font-size: 120%;
-}
-
-
-/*Contact Me*/
-
-#links {
-	padding-top: 5%;
-	padding-bottom: 2%;
-	padding-right: 10%;
-	padding-left: 10%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-#links>div {
-	flex: 1;
-}
-
-
-/*Footer*/
-
-#footer>h5 {
-	font-family: 'Josefin Sans';
-	font-weight: bold;
-	color: gray;
-}
-
-#footer>h6 {
-	font-family: 'Josefin Sans';
-	font-weight: bold;
-	color: gray;
-}
-
-#footer {
-	padding-top: 5%;
-	color: #000000
-}
-
-.custom-icon {
-	width: 2em;
-	/* same size as fa-2x */
-	height: 2em;
-	vertical-align: middle;
-	/* svg files currently have fill="#d3d3d3" - change it in them as well if I so desire */
-}
-
-
-/*
-.sourcererS {
-  font-size: x-large;
-}*/
-
-*>.fa.fa-hover-show,
-*:hover>.fa.fa-hover-hidden {
-	display: none;
-}
-
-*:hover>.fa.fa-hover-show {
-	display: inline-block;
-}
-
-
-/*delete this after adding colours to each section?*/
-
-.line-gray span {
-	background: #d3d3d3;
-	display: inline-block;
-	padding: 0.1em 2em;
-	margin-bottom: 5%;
-}
-
-
-/*Button to top by W3S*/
-
+/* --- Upwards Button --- */
 #myBtn {
-	display: none;
-	/* Hidden by default */
-	position: fixed;
-	/* Fixed/sticky position */
-	bottom: 20px;
-	/* Place the button at the bottom of the page */
-	right: 30px;
-	/* Place the button 30px from the right */
-	z-index: 99;
-	/* Make sure it does not overlap */
-	border: none;
-	/* Remove borders */
-	outline: none;
-	/* Remove outline */
-	background-color: rgba(169, 169, 169, 0.8);
-	/* Set a background color */
-	color: white;
-	/* Text color */
-	cursor: pointer;
-	/* Add a mouse pointer on hover */
-	padding: 15px;
-	/* Some padding */
-	border-radius: 10px;
-	/* Rounded corners */
-	font-size: 18px;
-	/* Increase font size */
+    display: none; /* Hidden by default, JS will show it on scroll */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background-color: var(--slate);
+    color: var(--silver);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Makes it a circle */
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
 #myBtn:hover {
-	background-color: #555;
-	/* Add a dark-grey background on hover */
+    background-color: var(--olive);
+}
+
+/* --- Navigation & Hamburger --- */
+.main-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    background: var(--slate);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--silver);
+    font-weight: 500;
+}
+
+/* Hide toggle checkbox */
+.nav-toggle { display: none; }
+
+/* Hamburger Icon styling for mobile */
+.nav-toggle-label {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: var(--silver);
+    height: 2px;
+    width: 25px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.nav-toggle-label span::before { content: ''; top: 8px; }
+.nav-toggle-label span::after { content: ''; bottom: 10px; }
+
+/* 3. Responsiveness (Mobile Hamburger Logic) */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;                 /* Center vertically */
+        transform: translateY(-50%);
+        padding: 15px;            /* More hit area */
+    }
+    .nav-container {
+        min-height: 60px;         /* Prevents squishing */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background: var(--slate);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid var(--slate);
+    }
+
+    /* Show links when checkbox is checked */
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .container-fluid {
+            padding: 30px 20px; /* Smaller sideways padding for mobile */
+            width: 100%;        /* Use full width on small screens */
+        }
+
+        .nav-container {
+            padding: 0 20px;
+        }
+}
+
+/* Footer links side by side */
+/* Replace #links style with this */
+#links {
+    display: flex;
+    flex-wrap: wrap;       /* Allows wrapping on tiny screens */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;             /* Space between icons */
+    padding: 20px 0;
+}
+
+#links > div {
+    display: inline-block; /* Ensures they don't stack */
+}
+
+/* 5. Using the Full Palette for Polish */
+#section1 {
+    height: 100vh;
+    width: 100%;
+    /* Use ../ to go back one folder level before entering img */
+    background: linear-gradient(rgba(30, 48, 48, 0.7), rgba(30, 48, 48, 0.7)),
+                url('../img/pc10.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: adds a nice parallax feel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: -50px; /* Pulls it up under the transparent-ish nav */
+}
+h2.title { border-bottom: 3px solid var(--mauve-shadow); color: var(--slate); padding-bottom: 5px; }
+.line-gray { height: 1px; background: var(--slate); margin: 20px 0; opacity: 0.3; }
+
+/* H1 Text display responsively */
+.alternativeText { display: none; }
+
+@media (max-width: 768px) {
+    .initialText { display: none; }
+    .alternativeText { display: block; }
+}
+
+/* Un-bold the about section */
+#about h3 {
+    font-weight: 400; /* Normal weight instead of bold */
+    font-size: 1.1rem;
+    color: var(--slate);
+}
+
+/* Enhance readability */
+.list ul li,
+#seminars ul li,
+#about h3,
+.projectGenres + ul li {
+    line-height: 1.5;      /* Adds space between lines */
+    margin-bottom: 12px;   /* Adds space between list items */
+}
+
+/* Table view */
+/*table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid var(--silver);
+    padding: 12px;
+}
+
+table thead th {
+    background-color: var(--slate);
+    color: var(--silver);
+    border-color: var(--slate);
+}*/
+/* 7. Skills Table Polish & Visible Lines */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+table th, table td {
+    border: 1px solid var(--silver); /* Visible grid lines */
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table thead th {
+    background-color: var(--slate);
+    color: var(--silver);
+    font-weight: 700;
+}
+
+/* 3. Mobile Table Responsiveness (Stacking) */
+@media (max-width: 600px) {
+    /* Stop table behavior */
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    /* Hide the top header row entirely */
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        border: 1px solid var(--silver);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* Target the first cell (The Skill Name) */
+    td:nth-of-type(1) {
+        background-color: var(--slate);
+        color: var(--silver);
+        font-weight: bold;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    /* Target the second cell (The Specifics) */
+    td:nth-of-type(2) {
+        padding: 15px;
+        background-color: #fff;
+        border: none;
+        line-height: 1.6;
+    }
+}
+
+/* 8. Email Trigger */
+.email-trigger .fa-hover-show { display: none; }
+.email-trigger:hover .fa-hover-hidden { display: none; }
+.email-trigger:hover .fa-hover-show { display: inline-block; color: var(--mauve-shadow); }
+
+/* 2. Footer Centered & Themed */
+.footer {
+    text-align: center !important;
+    padding: 40px 20px;
+    background: var(--slate);
+    color: var(--silver);
+}
+#footer { width: 100%; display: block; }
+
+/* Spoj/Leetcode Icon visibility */
+.custom-icon {
+    width: 32px;
+    vertical-align: middle;
+}
+
+/* Ensure nav doesn't cover content */
+body { padding-top: 50px; }
+
+/* Hamburger lines styling */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    background: var(--silver);
+}
+
+/* Styling for the highlighted nav link */
+.nav-links a.active {
+    color: var(--mauve-shadow) !important;
+    border-bottom: 2px solid var(--mauve-shadow);
+    padding-bottom: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Sideways padding */
+.container-fluid {
+    max-width: 1000px;  /* Keeps content from spreading too wide */
+    margin: 0 auto;    /* Centers the container */
+    padding: 40px 5%;  /* Responsive sideways padding */
+    width: 90%;        /* Fallback for smaller screens */
+    box-sizing: border-box;
+}
+
+/* Specific fix for Section 1 (Hero) */
+#section1 {
+    width: 100%;       /* Hero should stay full width */
+    max-width: none;
+    padding: 0;
+}
+
+/*Downwards Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-down i {
+    color: var(--silver);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.scroll-down i:hover {
+    color: var(--mauve-shadow);
+    opacity: 1;
+}
+
+/* Footer changes */
+/* 1. The Full-Width Background */
+.full-footer {
+    width: 100%;
+    background-color: var(--slate); /* Your #1E3030 color */
+    margin-top: 60px; /* Space above the footer */
+    padding: 40px 0;
+}
+
+/* 2. The Centered Inner Content */
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%; /* Matches your responsive sideways padding */
+    text-align: center;
+    color: var(--silver); /* Your #C4C9C3 color */
+}
+
+/* Clean up sub-elements */
+#footer h5, #footer h6 {
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+#footer i.fa-heart {
+    color: var(--mauve-shadow);
+}
+
+/* --- Sliding Underline Effect --- */
+a {
+    color: var(--olive);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--rose); /* Your #D4A79E */
+    /* This makes it start at 0 width from the left */
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+
+a:hover::after,
+a.active::after {
+    transform: scaleX(1);
+}
+
+a:hover {
+    color: var(--rose);
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 10px 0; /* Creates a larger hover area */
 }
