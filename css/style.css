@@ -1,58 +1,93 @@
+/* IOANNA ZAPALIDI | PORTFOLIO CSS 2026
+    PALETTE: Dark Navy, Iron Gray, Cool Gray, Light Gray
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 :root {
+    --dark-navy: #0F172A;   /* Background */
+    --iron-gray: #4A5759;   /* Links, URLs */
+    --cool-gray: #64748B;   /* ALL HEADERS (h1, h2, h3) */
+    --light-gray: #F4F4F4;  /* ALL BODY TEXT & NAV/FOOTER WORDS */
+    --frosted-blue: #8EDCE6; /* */
 }
 
+/* --- Base & Scroll Logic --- */
 html {
     scroll-behavior: smooth;
-    /* This should match the height of your navbar */
     scroll-padding-top: 70px;
 }
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    color: var(--slate);
-    background-color: var(--silver);
+    color: var(--light-gray);
+    background-color: var(--dark-navy);
     margin: 0;
+    padding-top: 50px;
+    line-height: 1.8; /* Enhanced readability spacing */
 }
 
-a {
-    color: var(--olive);
-    text-decoration: none;
-    transition: 0.3s;
-}
-a:hover { color: var(--mauve-shadow); }
-
-/* --- Upwards Button --- */
-#myBtn {
-    display: none; /* Hidden by default, JS will show it on scroll */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 999;
-    border: none;
-    outline: none;
-    background-color: var(--slate);
-    color: var(--silver);
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%; /* Makes it a circle */
-    width: 50px;
-    height: 50px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    transition: 0.3s;
+/* This hides the actual checkbox input while keeping the functionality */
+.nav-toggle {
+    display: none !important;
 }
 
-#myBtn:hover {
-    background-color: var(--olive);
+/* --- Typography & Headers (Cool Gray) --- */
+h1 {
+    color: var(--light-gray) !important;
+    font-weight: 700;
+    font-size: 3.5rem;
 }
 
-/* --- Navigation & Hamburger --- */
+h2, h3, h4, h5, h6, .projectGenres {
+    color: var(--cool-gray) !important;
+    font-weight: 700;
+}
+
+#about h3 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--light-gray) !important; /* About text remains light gray per request */
+}
+
+/* --- Hero Section (Centered Fix) --- */
+#section1 {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)),
+                url('../img/pc10.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;    /* Vertical Center */
+    justify-content: center; /* Horizontal Center */
+    position: relative;
+    margin-top: -50px;
+    text-align: center;      /* Center text internally */
+}
+
+.hero-overlay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alternativeText { display: none; }
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .initialText { display: none; }
+    .alternativeText { display: block; }
+}
+
+/* --- Navigation --- */
 .main-nav {
     position: fixed;
     top: 0; width: 100%;
-    background: var(--slate);
+    background: #1e293b;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .nav-container {
@@ -62,6 +97,7 @@ a:hover { color: var(--mauve-shadow); }
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
+    min-height: 60px;
 }
 
 .nav-links {
@@ -73,344 +109,228 @@ a:hover { color: var(--mauve-shadow); }
 }
 
 .nav-links a {
-    color: var(--silver);
+    color: var(--light-gray);
     font-weight: 500;
+    padding: 10px 0;
+    display: inline-block;
 }
 
-/* Hide toggle checkbox */
-.nav-toggle { display: none; }
+/* --- Links & Sliding Underline --- */
+/* --- Selective Sliding Underline --- */
 
-/* Hamburger Icon styling for mobile */
-.nav-toggle-label {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-    padding: 10px;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block;
-    background: var(--silver);
-    height: 2px;
-    width: 25px;
-    position: relative;
-    transition: all .2s ease-in-out;
-}
-
-.nav-toggle-label span::before { content: ''; top: 8px; }
-.nav-toggle-label span::after { content: ''; bottom: 10px; }
-
-/* 3. Responsiveness (Mobile Hamburger Logic) */
-@media (max-width: 768px) {
-    .nav-toggle-label {
-        display: block;
-        position: absolute;
-        left: 20px;
-        top: 50%;                 /* Center vertically */
-        transform: translateY(-50%);
-        padding: 15px;            /* More hit area */
-    }
-    .nav-container {
-        min-height: 60px;         /* Prevents squishing */
-    }
-
-    .nav-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column;
-        width: 100%;
-        background: var(--slate);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        text-align: center;
-        padding: 20px 0;
-        border-top: 1px solid var(--slate);
-    }
-
-    /* Show links when checkbox is checked */
-    .nav-toggle:checked ~ .nav-links {
-        display: flex;
-    }
-
-    .container-fluid {
-            padding: 30px 20px; /* Smaller sideways padding for mobile */
-            width: 100%;        /* Use full width on small screens */
-        }
-
-        .nav-container {
-            padding: 0 20px;
-        }
-}
-
-/* Footer links side by side */
-/* Replace #links style with this */
-#links {
-    display: flex;
-    flex-wrap: wrap;       /* Allows wrapping on tiny screens */
-    justify-content: center;
-    align-items: center;
-    gap: 20px;             /* Space between icons */
-    padding: 20px 0;
-}
-
-#links > div {
-    display: inline-block; /* Ensures they don't stack */
-}
-
-/* 5. Using the Full Palette for Polish */
-#section1 {
-    height: 100vh;
-    width: 100%;
-    /* Use ../ to go back one folder level before entering img */
-    background: linear-gradient(rgba(30, 48, 48, 0.7), rgba(30, 48, 48, 0.7)),
-                url('../img/pc10.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed; /* Optional: adds a nice parallax feel */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: -50px; /* Pulls it up under the transparent-ish nav */
-}
-h2.title { border-bottom: 3px solid var(--mauve-shadow); color: var(--slate); padding-bottom: 5px; }
-.line-gray { height: 1px; background: var(--slate); margin: 20px 0; opacity: 0.3; }
-
-/* H1 Text display responsively */
-.alternativeText { display: none; }
-
-@media (max-width: 768px) {
-    .initialText { display: none; }
-    .alternativeText { display: block; }
-}
-
-/* Un-bold the about section */
-#about h3 {
-    font-weight: 400; /* Normal weight instead of bold */
-    font-size: 1.1rem;
-    color: var(--slate);
-}
-
-/* Enhance readability */
-.list ul li,
-#seminars ul li,
-#about h3,
-.projectGenres + ul li {
-    line-height: 1.5;      /* Adds space between lines */
-    margin-bottom: 12px;   /* Adds space between list items */
-}
-
-/* Table view */
-/*table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-table th, table td {
-    border: 1px solid var(--silver);
-    padding: 12px;
-}
-
-table thead th {
-    background-color: var(--slate);
-    color: var(--silver);
-    border-color: var(--slate);
-}*/
-/* 7. Skills Table Polish & Visible Lines */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #fff;
-}
-
-table th, table td {
-    border: 1px solid var(--silver); /* Visible grid lines */
-    padding: 12px 15px;
-    text-align: left;
-    vertical-align: top;
-}
-
-table thead th {
-    background-color: var(--slate);
-    color: var(--silver);
-    font-weight: 700;
-}
-
-/* 3. Mobile Table Responsiveness (Stacking) */
-@media (max-width: 600px) {
-    /* Stop table behavior */
-    table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
-    }
-
-    /* Hide the top header row entirely */
-    thead {
-        display: none;
-    }
-
-    tr {
-        margin-bottom: 20px;
-        border: 1px solid var(--silver);
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    /* Target the first cell (The Skill Name) */
-    td:nth-of-type(1) {
-        background-color: var(--slate);
-        color: var(--silver);
-        font-weight: bold;
-        padding: 10px 15px;
-        border: none;
-    }
-
-    /* Target the second cell (The Specifics) */
-    td:nth-of-type(2) {
-        padding: 15px;
-        background-color: #fff;
-        border: none;
-        line-height: 1.6;
-    }
-}
-
-/* 8. Email Trigger */
-.email-trigger .fa-hover-show { display: none; }
-.email-trigger:hover .fa-hover-hidden { display: none; }
-.email-trigger:hover .fa-hover-show { display: inline-block; color: var(--mauve-shadow); }
-
-/* 2. Footer Centered & Themed */
-.footer {
-    text-align: center !important;
-    padding: 40px 20px;
-    background: var(--slate);
-    color: var(--silver);
-}
-#footer { width: 100%; display: block; }
-
-/* Spoj/Leetcode Icon visibility */
-.custom-icon {
-    width: 32px;
-    vertical-align: middle;
-}
-
-/* Ensure nav doesn't cover content */
-body { padding-top: 50px; }
-
-/* Hamburger lines styling */
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    background: var(--silver);
-}
-
-/* Styling for the highlighted nav link */
-.nav-links a.active {
-    color: var(--mauve-shadow) !important;
-    border-bottom: 2px solid var(--mauve-shadow);
-    padding-bottom: 5px;
-    transition: 0.3s ease-in-out;
-}
-
-/* Sideways padding */
-.container-fluid {
-    max-width: 1000px;  /* Keeps content from spreading too wide */
-    margin: 0 auto;    /* Centers the container */
-    padding: 40px 5%;  /* Responsive sideways padding */
-    width: 90%;        /* Fallback for smaller screens */
-    box-sizing: border-box;
-}
-
-/* Specific fix for Section 1 (Hero) */
-#section1 {
-    width: 100%;       /* Hero should stay full width */
-    max-width: none;
-    padding: 0;
-}
-
-/*Downwards Arrow */
-.scroll-down {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
-
-.scroll-down i {
-    color: var(--silver);
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
-.scroll-down i:hover {
-    color: var(--mauve-shadow);
-    opacity: 1;
-}
-
-/* Footer changes */
-/* 1. The Full-Width Background */
-.full-footer {
-    width: 100%;
-    background-color: var(--slate); /* Your #1E3030 color */
-    margin-top: 60px; /* Space above the footer */
-    padding: 40px 0;
-}
-
-/* 2. The Centered Inner Content */
-.footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 5%; /* Matches your responsive sideways padding */
-    text-align: center;
-    color: var(--silver); /* Your #C4C9C3 color */
-}
-
-/* Clean up sub-elements */
-#footer h5, #footer h6 {
-    margin: 10px 0;
-    font-weight: 400;
-}
-
-#footer i.fa-heart {
-    color: var(--mauve-shadow);
-}
-
-/* --- Sliding Underline Effect --- */
-a {
-    color: var(--olive);
+/* Only target links in the nav, footer, and text lists */
+.nav-links a,
+.footer-content a,
+.container-fluid a,
+#links a {
+    color: var(--frosted-blue);
     text-decoration: none;
     position: relative;
     padding-bottom: 2px;
     transition: color 0.3s ease;
 }
 
-a::after {
+/* The pseudo-element (the line) only applies to these specific links */
+.nav-links a::after,
+.footer-content a::after,
+.container-fluid a::after,
+#links a::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--rose); /* Your #D4A79E */
-    /* This makes it start at 0 width from the left */
+    background-color: var(--light-gray);
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.3s ease-out;
 }
 
-a:hover::after,
-a.active::after {
+/* Hover and Active states for the line */
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.container-fluid a:hover::after,
+.footer-content a:hover::after,
+#links a:hover::after {
     transform: scaleX(1);
 }
 
-a:hover {
-    color: var(--rose);
+/* --- Utility Buttons (No Underline) --- */
+/* This specifically ensures the chevron buttons are clean */
+.scroll-down a::after,
+#myBtn::after {
+    display: none !important;
 }
 
-.nav-links a {
+.scroll-down a,
+#myBtn {
+    border: none;
+    text-decoration: none;
+}
+
+.scroll-down a {
+    color: var(--light-gray); /* Restoration of palette color */
+    text-decoration: none;
+    border: none;
+}
+
+.scroll-down a:hover {
+    color: var(--iron-gray); /* Hover effect */
+    transition: 0.3s;
+}
+
+/* Ensure the FontAwesome icon itself doesn't inherit weird sizes */
+.scroll-down i {
+    font-size: 2rem;
+}
+
+/* --- Email Hover Animation Fix --- */
+.email-trigger {
     display: inline-block;
-    padding: 10px 0; /* Creates a larger hover area */
+    position: relative;
+}
+
+.email-trigger .fa-hover-show { display: none; }
+.email-trigger:hover .fa-hover-hidden { display: none; }
+.email-trigger:hover .fa-hover-show {
+    display: inline-block;
+    color: var(--light-gray);
+}
+
+/* --- Contact & Footer (Side-by-Side Fix) --- */
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+    max-width: 800px;       /* Keeps the grid tight and professional */
+    margin: 0 auto;         /* Centers the whole grid */
+}
+
+/* Ensure each icon container behaves correctly */
+#links > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;        /* Prevents squishing */
+}
+
+#links div { display: inline-block; }
+
+.full-footer {
+    width: 100%;
+    background-color: #1e293b;
+    margin-top: 60px;
+    padding: 40px 0;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+    color: var(--light-gray);
+}
+
+.custom-icon {
+    width: 32px;         /* Specific size to match FontAwesome icons */
+    height: auto;
+    vertical-align: middle;
+}
+
+.custom-icon:hover {
+    filter: brightness(0) invert(1); /* Brighten on hover */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .nav-toggle-label { display: block; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); padding: 15px; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #1e293b;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px 0;
+    }
+    .nav-toggle:checked ~ .nav-links { display: flex; }
+}
+
+/* --- Container Sideways Padding --- */
+.container-fluid {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* --- Skills Grid & Cards --- */
+.skills-grid {
+    display: grid;
+    /* This creates a responsive grid:
+       It will fit as many cards as possible (min 280px wide) in one row */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.skill-card {
+    background-color: rgba(255, 255, 255, 0.03); /* Very subtle dark overlay */
+    border: 1px solid var(--iron-gray);
+    border-radius: 8px;
+    padding: 0; /* Header and body will handle padding */
+    overflow: hidden; /* Ensures header corners stay rounded */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Slight lift on hover to make it interactive */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-header {
+    background-color: var(--iron-gray);
+    color: var(--light-gray);
+    padding: 12px 15px;
+    font-weight: 700;
+    font-size: 1rem;
+    /* Removing the global header underline here since it's a card title */
+    border-bottom: none;
+}
+
+.skill-body {
+    padding: 15px;
+    color: var(--light-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Category Titles (IT Skills, Languages) */
+.skill-category-title {
+    margin-top: 30px;
+    /* Keeping your requested underlined style for main headers */
+    display: inline-block;
+    border-bottom: 2px solid var(--iron-gray);
+    padding-bottom: 5px;
+    color: var(--cool-gray) !important;
+}
+
+/* --- Back to Top --- */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px; right: 30px;
+    z-index: 999;
+    background-color: var(--frosted-blue);
+    color: var(--light-gray);
+    width: 50px; height: 50px; border: none; border-radius: 50%;
+    cursor: pointer; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 }
