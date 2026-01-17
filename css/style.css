@@ -247,7 +247,7 @@ h2, h3, h4, h5, h6, .projectGenres {
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    .nav-toggle-label { display: block; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); padding: 15px; }
+    .nav-toggle-label { display: block; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); padding: 15px; z-index: 1001; cursor: pointer; }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -256,9 +256,53 @@ h2, h3, h4, h5, h6, .projectGenres {
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 20px 0;
+        /*padding: 20px 0;*/
+        text-align: left;
+        padding: 20px 0 20px 40px; /* Top, Right, Bottom, Left (40px) */
+
+        box-sizing: border-box;
+        border-bottom: 2px solid var(--iron-gray);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
     .nav-toggle:checked ~ .nav-links { display: flex; }
+
+    /* 2. Style the 3 lines (the spans) */
+        .nav-toggle-label span,
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            display: block;
+            background: var(--light-gray) !important; /* High contrast color */
+            height: 2px;
+            width: 25px;
+            position: absolute;
+            transition: all .2s ease-in-out;
+        }
+
+        /* 3. Position the top and bottom lines */
+        .nav-toggle-label span::before {
+            content: '';
+            top: -8px; /* Position above center line */
+        }
+
+        .nav-toggle-label span::after {
+            content: '';
+            top: 8px; /* Position below center line */
+        }
+
+        /* 4. Animate into an 'X' when open */
+        .nav-toggle:checked ~ .nav-toggle-label span {
+            background: transparent !important; /* Hide middle line */
+        }
+
+        .nav-toggle:checked ~ .nav-toggle-label span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .nav-toggle:checked ~ .nav-toggle-label span::after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
 }
 
 /* --- Container Sideways Padding --- */
