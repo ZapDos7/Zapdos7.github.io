@@ -50,6 +50,61 @@ h2, h3, h4, h5, h6, .projectGenres {
     color: var(--light-gray) !important; /* About text remains light gray per request */
 }
 
+/* --- Projects --- */
+/* --- Collapsible Project Groups --- */
+.project-group {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--iron-gray);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* The clickable header */
+.group-header {
+    padding: 15px 20px;
+    cursor: pointer;
+    list-style: none; /* Removes default arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(74, 87, 89, 0.1); /* Subtle Iron Gray tint */
+}
+
+/* Remove default arrow in Chrome/Safari */
+.group-header::-webkit-details-marker {
+    display: none;
+}
+
+.inline-h3 {
+    margin: 0 !important;
+    border-bottom: none !important; /* Overriding global header underline inside summary */
+    color: var(--cool-gray) !important;
+}
+
+.group-header i {
+    color: var(--iron-gray);
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+details[open] .group-header i {
+    transform: rotate(180deg);
+}
+
+/* The content inside */
+.group-content {
+    padding: 20px;
+    border-top: 1px solid var(--iron-gray);
+    background-color: var(--dark-navy);
+}
+
+/* Ensure project links don't have the sliding underline if they are icons */
+.group-content a i {
+    text-decoration: none;
+}
+
 /* --- Hero Section (Centered Fix) --- */
 #section1 {
     height: 100vh;
@@ -94,7 +149,8 @@ h2, h3, h4, h5, h6, .projectGenres {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     min-height: 60px;
@@ -106,6 +162,7 @@ h2, h3, h4, h5, h6, .projectGenres {
     gap: 25px;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .nav-links a {
@@ -412,3 +469,94 @@ h2, h3, h4, h5, h6, .projectGenres {
     color: var(--light-gray);
 }
 /* for safety */
+
+/* Language Picker */
+/* --- The Language Switcher --- */
+.lang-switch {
+    margin-left: auto;
+}
+
+.lang-switch a {
+    display: inline-block;
+    min-width: 45px;          /* Fixed width so it never jumps */
+    text-align: center;   /* Center the text inside the fixed width */
+    color: var(--light-gray) !important;
+    border: 1px solid var(--iron-gray);
+    padding: 5px 0 !important; /* Vertical padding only, width handles horizontal */
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.lang-switch a:hover {
+    background-color: var(--iron-gray);
+    color: var(--light-gray) !important;
+}
+
+.lang-switch a::after {
+    display: none !important; /* No sliding underline on the button box */
+}
+
+@media (min-width: 769px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative; /* Base for absolute positioning if needed */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center; /* This centers the main items */
+        align-items: center;
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 25px;
+    }
+
+    /* 1. This pushes the main links to the center */
+    /* We add a "pseudo" spacer at the start of the list */
+    .nav-links::before {
+        content: '';
+        flex: 1;
+    }
+
+    /* 2. This pushes the lang-switch to the far right */
+    .lang-switch {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .lang-switch a {
+        min-width: 45px;
+        text-align: center;
+    }
+}
+
+/* Mobile Overrides */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns items to the left */
+        padding: 20px 0 20px 40px;
+    }
+
+    .lang-switch {
+        margin-left: 0; /* Reset the push-to-right on mobile */
+        margin-top: 10px;
+    }
+
+    /* Disable the desktop spacers on mobile */
+    .nav-links::before { display: none; }
+}
+
+/* Ensure the sliding underline doesn't appear on the language button */
+.lang-switch a::after {
+    display: none !important;
+}

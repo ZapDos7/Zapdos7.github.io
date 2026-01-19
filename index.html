@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>Ioanna Zapalidi | Java Software Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="./img/fav.ico" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/fav.ico"/>
 </head>
-
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
-
 <nav class="main-nav">
     <div class="nav-container">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
         </label>
-
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-key="about_header">About</a></li>
+            <li><a href="#experience" data-key="experience_header">Experience</a></li>
+            <li><a href="#education" data-key="education_header">Education</a></li>
+            <li><a href="#skills" data-key="skills_header">Skills</a></li>
+            <li><a href="#projects" data-key="projects_header">Projects</a></li>
+            <li><a href="#seminars" data-key="seminars_header">Seminars</a></li>
+            <li><a href="#contact" data-key="contact_header">Contact</a></li>
+            <li class="lang-switch">
+                <a href="javascript:void(0)" onclick="toggleLanguage()" id="langBtn">EL</a>
+            </li>
         </ul>
     </div>
 </nav>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./js/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/index.js"></script>
 <section id="section1">
     <div class="hero-overlay">
-        <h1 class="initialText">Hello World! I am Ioanna.</h1>
-        <h1 class="alternativeText">Hello World! <br> I am Ioanna.</h1>
-
+        <h1 class="initialText" data-key="hero_title">Hello World! I am Ioanna.</h1>
+        <h1 class="alternativeText" data-key="hero_title">Hello World! <br> I am Ioanna.</h1>
         <div class="scroll-down">
             <a href="#about">
                 <i class="fa fa-chevron-down fa-2x"></i>
@@ -45,133 +44,140 @@
         </div>
     </div>
 </section>
-    <div class="container-fluid" id="about">
-        <h2 class="title">
-            About Me
-        </h2>
-        <div class="row">
-            <div class="col-md-12">
-                <script type="text/javascript">
-                    $(window).resize(function() {
-                        if ($(this).width() < 1024) {
-                            $("#moi").hide();
-                        } else {
-                            $("#moi").show();
-                        }
-                    });
-                </script>
-                <h3>
-                    Hello, world!<br />
-                    I'm Ioanna, a Back-End Developer with over 5 years of experience, specializing in Java and frameworks like Spring Boot.<br />
-                    I’m passionate about problem-solving and enjoy developing efficient solutions to complex challenges. With a keen interest in AI, machine learning, and mathematics, I’m constantly seeking opportunities to deepen my knowledge and broaden my skills across various domains.<br />
-                    I’m inspired by leaders who lead by example; those who manage both people and expectations with grace and authority. I especially admire women excelling in STEM fields and aspire to follow in their footsteps by thriving in similar roles.<br />
-                    Beyond tech, I’m deeply interested in psychology, foreign languages and cultures, as well as poetry and dancing.<br /><br />
-                    You can see more about my skills <a href="#skills">here</a>.<br /> You can message me on my <a href="#contact">social media</a> to get in touch with me.
-                </h3>
-            </div>
-        </div>
-        <div class="line-gray text-center">
-            <span></span>
-        </div>
-    </div>
-    <div class="container-fluid" id="experience">
-        <h2 class="title">
-            My Previous Experience
-        </h2>
-        <div class="list" id="listPrEx">
-            <ul>
-                <li>
-                    <b>Senior Software Engineer</b>, September 2025 - present, for <i><a href="https://www.cognity.gr/">Cognity S.A.</a></i>.
-
-                    <ul style="padding-left: 1em;">
-                        <li>Led a team of 5 back-end developers to build a secure, high-performance messaging platform using microservices design for the Greek public sector.</li>
-                        <li>Developed RESTful APIs across multiple projects, following OpenAPI standards and ensuring maintainability and scalability.</li>
-                        <li>Conducted code reviews, established coding best practices, and mentored new back-end interns to promote code quality and team growth.</li>
-                        <li>Authored internal documentation and user guides using Confluence and OpenAPI.</li>
-                    </ul>
-                </li>
-
-                <li>
-                    <b>Software Engineer Intern</b>, October 2020 - April 2021 and <b>Back End Developer</b>, April 2021 - August 2025, for <i><a href="https://www.logicea.com/">Logicea, LLC</a></i>.
-
-                    <ul style="padding-left: 1em;">
-                      <li>Led a team of 3 back-end developers to build a secure, high-performance e-SIM purchasing platform, integrating third-party APIs and ensuring high availability and compliance with industry standards.</li>
-                      <li>Designed and implemented a multi-market, large-scale advertising management platform using Spring Boot, Kotlin, and Node.js, improving campaign setup speed and cross-market scalability.</li>
-                      <li>Maintained and enhanced core features of a knowledge-based browser game (Java, Spring Boot, PostgreSQL, Redis), serving thousands of daily users with minimal downtime.</li>
-                      <li>Developed RESTful APIs across multiple projects, following OpenAPI standards and ensuring maintainability and scalability.</li>
-                      <li>Conducted code reviews, established coding best practices, and mentored new back-end interns to promote code quality and team growth.</li>
-                      <li>Collaborated closely with front-end developers, designers, and product managers in agile ceremonies (sprint planning, retrospectives, daily stand-ups).</li>
-                      <li>Authored internal documentation and user guides using Confluence and OpenAPI.</li>
-                      <li>Contributed to recruitment by reviewing CVs, conducting interviews, andonboarding junior talent.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="line-gray text-center">
-            <span></span>
-        </div>
-
-        <h3 class="title">
-            Volunteering Experience
-        </h3>
-        <div class="list" id="listVolEx">
-            <ul>
-                <li>
-                    <b>Volunteer Software Developer</b> for
-                    <i><a href="http://www.scify.gr/site/en/">SciFY Not-for-Profit Company</a></i>, April 2017 - December 2017.
-                    <br />
-                    <i>Cause: Human Rights</i><br /> Our main goal was to ameliorate the
-                    <a href="http://www.gamesfortheblind.org/">gamesfortheblind.org</a> site, so that it would be easier to access for both visually impaired people and the rest. We mainly worked with WordPress for this goal, and used Slack for our communication
-                    and Trello for managing our tasks.
-                </li>
-                <li>
-                    <b>Volunteer IT Support</b> for the
-                    <i><a href="http://portal.tee.gr/portal/page/portal/TEE/TCG">Technical Chamber of Greece</a></i>, November 2016.
-                    <br />
-                    <i>Cause: Civil Rights</i><br /> IT support for the elections of 2016. My main duties revolved around handling the voters' system, mark them as voted or absent, select the required voting paperwork for them and handle my team's requests
-                    on the system (e.g. printing and logging activities).
-                </li>
-            </ul>
-        </div>
-        <div class="line-gray text-center">
-            <span></span>
+<div class="container-fluid" id="about">
+    <h2 class="title" data-key="about_header">
+        About Me
+    </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <script type="text/javascript">
+                $(window).resize(function() {
+                    if ($(this).width() < 1024) {
+                        $("#moi").hide();
+                    } else {
+                        $("#moi").show();
+                    }
+                });
+            </script>
+            <h3>
+                        <span data-key="hello_world">
+                        Hello, world!<br/>
+                        I'm Ioanna, a Back-End Developer with over 5 years of experience, specializing in Java and frameworks like Spring Boot.<br/>
+                        I’m passionate about problem-solving and enjoy developing efficient solutions to complex challenges. With a keen interest in AI, machine learning, and mathematics, I’m constantly seeking opportunities to deepen my knowledge and broaden my skills across various domains.<br/>
+                        I’m inspired by leaders who lead by example; those who manage both people and expectations with grace and authority. I especially admire women excelling in STEM fields and aspire to follow in their footsteps by thriving in similar roles.<br/>
+                        Beyond tech, I’m deeply interested in psychology, foreign languages and cultures, as well as poetry and dancing.<br/><br/>
+                        You can see more about my skills <a href="#skills">here</a>.<br/> You can message me on my <a
+                                href="#contact">social media</a> to get in touch with me.
+                        </span>
+            </h3>
         </div>
     </div>
-    <div class="container-fluid" id="education">
-        <div class="title">
-            <h2>
-                Educational Background
-            </h2>
-        </div>
-        <div class="list" id="listEdu">
-            <ul>
-                <li>
-                    <i>2014 - 2021</i>: Undergraduate Student of the
-                    <a href="http://di.uoa.gr">Department of Informatics and Telecommunications</a>, National & Kapodistrian University of Athens (NKUA),
-                    <b>GPA</b>:
-                    <b>Very Good</b>.
+</div>
+<div class="container-fluid" id="experience">
+    <h2 class="title" data-key="experience_header">
+        My Previous Experience
+    </h2>
+    <div class="list" id="listPrEx">
+        <ul>
+            <li>
+                        <span data-key="experience_2">
+                        <b>Senior Software Engineer</b>, September 2025 - present, <i><a href="https://www.cognity.gr/">Cognity S.A.</a></i>.
+                        </span>
+                <ul style="padding-left: 1em;">
+                    <li data-key="experience_2_li_1">Led a team of 5 back-end developers to build a secure,
+                        high-performance messaging platform for the Greek public sector using microservices design,
+                        following OpenAPI standards and ensuring maintainability and scalability.
+                    </li>
+                    <li data-key="experience_2_li_2">Conducted code reviews, authored internal documentation,
+                        established coding best practices, and mentored new back-end interns to promote code quality and
+                        team growth.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                        <span data-key="experience_1">
+                        <b>Software Engineer Intern</b>, October 2020 - April 2021 and <b>Back End Developer</b>, April 2021 - August 2025, <i><a
+                                href="https://www.logicea.com/">Logicea, LLC</a></i>.
+                        </span>
+                <ul style="padding-left: 1em;">
+                    <li data-key="experience_1_li_1">Led a team of 3 back-end developers to build a secure,
+                        high-performance e-SIM purchasing platform, integrating third-party APIs and ensuring high
+                        availability and compliance with industry standards.
+                    </li>
+                    <li data-key="experience_1_li_2">Designed and implemented a multi-market, large-scale advertising
+                        management platform using Spring Boot, Kotlin, and Node.js, improving campaign setup speed and
+                        cross-market scalability.
+                    </li>
+                    <li data-key="experience_1_li_3">Maintained and enhanced core features of a knowledge-based browser
+                        game (Java, Spring Boot, PostgreSQL, Redis), serving thousands of daily users with minimal
+                        downtime.
+                    </li>
+                    <li data-key="experience_1_li_4">Developed RESTful APIs across multiple projects, following OpenAPI
+                        standards and ensuring maintainability and scalability.
+                    </li>
+                    <li data-key="experience_1_li_5">Conducted code reviews, established coding best practices, and
+                        mentored new back-end interns to promote code quality and team growth.
+                    </li>
+                    <li data-key="experience_1_li_6">Collaborated closely with front-end developers, designers, and
+                        product managers in agile ceremonies (sprint planning, retrospectives, daily stand-ups).
+                    </li>
+                    <li data-key="experience_1_li_7">Authored internal documentation and user guides using Confluence
+                        and OpenAPI.
+                    </li>
+                    <li data-key="experience_1_li_8">Contributed to recruitment by reviewing CVs, conducting interviews,
+                        and onboarding junior talent.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h3 class="title" data-key="volunteer_experience_header">
+        Volunteering Experience
+    </h3>
+    <div class="list" id="listVolEx">
+        <ul>
+            <li data-key="volunteer_experience_2">
+                <b>Volunteer Software Developer</b>, <i><a href="http://www.scify.gr/site/en/">SciFY Not-for-Profit
+                Company</a></i>, April 2017 - December 2017.<br/>
+                <i>Cause: Human Rights</i><br/> Our main goal was to ameliorate the <a
+                    href="http://www.gamesfortheblind.org/">gamesfortheblind.org</a> site, so that it would be easier to
+                access for both visually impaired people and the rest. We mainly worked with WordPress for this goal,
+                and used Slack for our communication
+                and Trello for managing our tasks.
+            </li>
+            <li data-key="volunteer_experience_1">
+                <b>Volunteer IT Support</b>, <i><a href="http://portal.tee.gr/portal/page/portal/TEE/TCG">Technical
+                Chamber of Greece</a></i>, November 2016.<br/>
+                <i>Cause: Civil Rights</i><br/> IT support for the elections of 2016. My main duties revolved around
+                handling the voters' system, mark them as voted or absent, select the required voting paperwork for them
+                and handle my team's requests
+                on the system (e.g. printing and logging activities).
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid" id="education">
+    <div class="title">
+        <h2 data-key="educational_header">
+            Educational Background
+        </h2>
+    </div>
+    <div class="list" id="listEdu">
+                <span data-key="degree">
+                    <i>2014 - 2021</i>: Undergraduate Student of the <a href="http://di.uoa.gr">Department of Informatics and Telecommunications</a>, National & Kapodistrian University of Athens (NKUA), <b>GPA</b>: <b>Very Good</b>.<br/>
                     <!-- Bachelor of Science in Informatics & Telecommunications (4-year degree; 240 ECTS; Grade percentile x%) -->
-                </li>
-                <li>
-                    <i>2011 - 2014</i>: Student of Protypo Peiramatiko Lyceum of Agii Anargiri, <b>grade: Excellent, 19.4/20</b>
-                </li>
-            </ul>
-        </div>
-        <div class="line-gray text-center">
-            <span></span>
-        </div>
+                    Member of National and Kapodistrian University of Athens <b><a
+                        href="https://gdsc.community.dev/national-and-kapodistrian-university-of-athens/"> Google Dev Community</a></b>
+                </span>
     </div>
-
+</div>
 <div class="container-fluid" id="skills">
-    <h2 class="title">Skills</h2>
-
+    <h2 class="title" data-key="skills_header">Skills</h2>
     <div id="bigTable">
-        <h3 class="skill-category-title">IT Skills</h3>
-
+        <h3 class="skill-category-title" data-key="it_skills">Programming Skills</h3>
         <div class="skills-grid">
-
             <div class="skill-card">
-                <div class="skill-header">Programming Languages</div>
+                <div class="skill-header" data-key="programming_languages">Programming Languages</div>
                 <div class="skill-body">
                     <ul>
                         <li>Java (Spring, Spring Boot)</li>
@@ -183,7 +189,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
                 <div class="skill-header">DevOps & Cloud Tools</div>
                 <div class="skill-body">
@@ -197,18 +202,16 @@
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
-                <div class="skill-header">Databases</div>
+                <div class="skill-header" data-key="databases_header">Databases</div>
                 <div class="skill-body">
                     <ul>
-                        <li>Relational (MySQL, PostgreSQL)</li>
+                        <li data-key="relational_dbs">Relational (MySQL, PostgreSQL)</li>
                         <li>NoSQL (MongoDB, CosmosDB)</li>
                         <li>Redis</li>
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
                 <div class="skill-header">API & Development Tools</div>
                 <div class="skill-body">
@@ -220,7 +223,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
                 <div class="skill-header">Testing Tools</div>
                 <div class="skill-body">
@@ -231,7 +233,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
                 <div class="skill-header">Security</div>
                 <div class="skill-body">
@@ -241,17 +242,15 @@
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
-                <div class="skill-header">Architecture Knowledge</div>
+                <div class="skill-header" data-key="architectural">Architectural Knowledge</div>
                 <div class="skill-body">
                     <ul>
-                        <li>Microservices (with synchronous & asynchronous communication</li>
+                        <li data-key="microservices">Microservices (with synchronous & asynchronous communication)</li>
                         <li>Event-driven design, Kafka</li>
                     </ul>
                 </div>
             </div>
-
             <div class="skill-card">
                 <div class="skill-header">Project Management</div>
                 <div class="skill-body">
@@ -261,350 +260,479 @@
                     </ul>
                 </div>
             </div>
-
-        </div> <h3 class="skill-category-title">Languages</h3>
+        </div>
+        <h3 class="skill-category-title" data-key="languages">Languages</h3>
         <div class="skills-grid">
             <div class="skill-card">
-                <div class="skill-header">Greek</div>
-                <div class="skill-body">Native</div>
+                <div class="skill-header" data-key="languages_gr">Greek</div>
+                <div class="skill-body" data-key="languages_gr_level">Native</div>
             </div>
             <div class="skill-card">
-                <div class="skill-header">English</div>
-                <div class="skill-body">Proficiency (University of Michigan), First Certificate (Cambridge)</div>
+                <div class="skill-header" data-key="languages_en">English</div>
+                <div class="skill-body" data-key="languages_en_level">Proficiency (University of Michigan), First
+                    Certificate (Cambridge)
+                </div>
             </div>
             <div class="skill-card">
-                <div class="skill-header">French</div>
-                <div class="skill-body">Delf, Niveau B2</div>
+                <div class="skill-header" data-key="languages_fr">French</div>
+                <div class="skill-body" data-key="languages_fr_level">Delf, Niveau B2</div>
             </div>
             <div class="skill-card">
-                <div class="skill-header">Spanish</div>
-                <div class="skill-body">State Certificate of Language Proficiency (ΚΠγ), Level B2</div>
+                <div class="skill-header" data-key="languages_es">Spanish</div>
+                <div class="skill-body" data-key="languages_es_level">State Certificate of Language Proficiency (ΚΠγ),
+                    Level B2
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="line-gray text-center"><span></span></div>
 </div>
-
-    <div class="container-fluid" id="projects">
-        <h2 class="title">
-            My Projects
-        </h2>
-
-        <h3 class="projectGenres">
-            Java Projects:
-        </h3>
-        <ul>
-            <li>
-                <b>Beer Rating App</b> (WIP)<br /> View it on
-                <a href="https://github.com/ZapDos7/beer-app/tree/main"><i class="fa fa-github"></i></a><br />
-                <i>Technologies used: Java, Spring Boot, MySQL, Flyway, Mockito, Junit</i>
-            </li>
-            <li>
-                <b>Example Code for Design Patterns in Java</b><br /> View it on
-                <a href="https://github.com/ZapDos7/design-patterns-examples"><i class="fa fa-github"></i></a><br />
-                <i>Technologies used: Java</i>
-            </li>
-            <li>
-                <b>Java Problems</b> (WIP)<br /> View it on
-                <a href="https://github.com/ZapDos7/java-problems"><i class="fa fa-github"></i></a><br />
-                <i>Technologies used: Java</i>
-            </li>
-            <li>
-                <b>Sample Testing Application for <a href="https://www.regeneration.gr/en/regen-academy/4women-in-software-quality-assurance-testing/">ReGeneration's QA Academy</a></b><br /> View it on
-                <a href="https://github.com/ZapDos7/SampleTestWithJunitAndSelenium"><i class="fa fa-github"></i></a><br />
-                <i>Technologies used: Java, Selenium</i>
-            </li>
-        </ul>
-
-        <h3 class="projectGenres">
-            AI/Prompting Projects:
-        </h3>
-        <ul>
-            <li>
-                <b>My solutions to Lakera's <a href="https://gandalf.lakera.ai/">Gandalf</a></b><br /> View it on
-                <a href="https://github.com/ZapDos7/lakera-gandalf"><i class="fa fa-github"></i></a><br />
-            </li>
-            <li>
-                <b>My solutions to Harvard's <a href="https://gandalf.lakera.ai/cs50">Ready Player 50 Duck Challenge</a></b><br /> View it on
-                <a href="https://github.com/ZapDos7/lakera-cs50-duck"><i class="fa fa-github"></i></a><br />
-            </li>
-        </ul>
-
-        <h3 class="projectGenres">
-            Web Development Projects:
-        </h3>
-        <ul>
-            <li>
-                <b>Front and Back end Development of a sample site for the Web
-          Development Academy by CollegeLink (17/10 - 30/10/2017)</b><br /> View it on
-                <a href="https://github.com/ZapDos7/WDA_Project"><i class="fa fa-github"></i></a> or
-                <a href="https://codepen.io/IoannaZapalidi/pen/EbyGKq"><i class="fa fa-codepen"></i></a><br />
-                <i>Technologies used: HTML, CSS, JavaScript, PHP, SQL</i>
-            </li>
-            <li>
-                <b>Amelioration of the site for the
-          <a href="http://www.ika.gr">Social Insurance Institute</a> of
-          Greece</b><br />View it on
-                <a href="https://github.com/ZapDos7/HCI_IKA"><i class="fa fa-github"></i></a><br />
-                <i>Technologies used: HTML, CSS, JavaScript, PHP, SQL</i>
-            </li>
-            <li>
-                <b>Auction website</b><br /> View it on
-                <a href="https://github.com/chris94dim/auctionWebForDi"><i class="fa fa-github"></i></a>
-                <i>Technologies used: HTML, CSS - Bootstrap, ReactJS, Django with REST
-          Api</i>
-            </li>
-        </ul>
-        <h3 class="projectGenres">
-            Machine Learning:
-        </h3>
-        <ul>
-            <li>
-                <b>Machine Learning Project</b> for the course "Machine Learning Techniques", Spring Semester 2017-18.<br /> View it on
-                <a href="https://github.com/ZapDos7/MachineLearning2018"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: Python 2.7, Anaconda, Scikit-learn, Pandas &
-          NumPy</i>
-            </li>
-            <li>
-                <b>Nearest Neighbours Problem (part1): LSH (based on Manhattan
-          Distance) & Random Projection on Hypercube for d-dimensional vectors
-          and polygonal curves</b><br /> View it on
-                <a href="https://github.com/ZapDos7/project1"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: C++</i>
-            </li>
-            <li>
-                <b>Nearest Neighbours Problem (part2): Clustering implementation of
-          k-means & k-medoids for d-dimensional vectors and polygonal
-          curves</b><br /> View it on
-                <a href="https://github.com/ZapDos7/project2"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: C++</i>
-            </li>
-            <li>
-                <b>Nearest Neighbours Problem (part3): Prognosis of Wind Intensity
-          with pre-trained Deep Neural Network</b><br /> View it on
-                <a href="https://github.com/ZapDos7/project3"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: Python 3.7, Keras API, Tensorflow</i>
-            </li>
-            <li>
-                <b>General Projects for Udacity's
-          <a href="https://classroom.udacity.com/courses/ud120/">Machine Learning Course</a> </b><br /> View it on
-                <a href="https://github.com/ZapDos7/MachineLearning"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: Python 2.7, Anaconda, Scikit-learn, Pandas &
-          NumPy</i>
-            </li>
-        </ul>
-        <h3 class="projectGenres">
-            Applications (with imperative and object oriented implementations):
-        </h3>
-        <ul>
-            <li>
-                <b>Disease Monitoring Application</b><br /> View it on <a href="https://github.com/ZapDos7/syspro1"><i class="fa fa-github"></i></a><br>
-                <i>Technologies used: C++</i>
-            </li>
-            <li>
-                <b>Disease Monitoring Application (using multiple processes)</b><br /> View it on <a href="https://github.com/ZapDos7/syspro2"><i class="fa fa-github"></i></a><br>
-                <i>Technologies used: C++</i>
-            </li>
-            <li>
-                <b>Disease Monitoring Application over Network</b><br /> View it on <a href="https://github.com/ZapDos7/syspro3"><i class="fa fa-github"></i></a><br>
-                <i>Technologies used: C++</i>
-            </li>
-            <li>
-                <b>Application of queue of customers and multiple cash desks</b><br /> View it on
-                <a href="https://github.com/ZapDos7/Data_Structures_2015/tree/master/Ergasia1"><i
-            class="fa fa-github"></i></a><br />
-                <i>Technologies used: C</i>
-            </li>
-            <li>
-                <b>Application of Electronic menu for restaurants</b><br /> View it on
-                <a href="https://github.com/ZapDos7/Data_Structures_2015/tree/master/Ergasia2"><i
-            class="fa fa-github"></i></a><br />
-                <i>Technologies used: C</i>
-            </li>
-            <li>
-                <b>Application of airport functions</b><br /> View it on
-                <a href="https://github.com/ZapDos7/Data_Structures_2015/tree/master/Ergasia3"><i
-            class="fa fa-github"></i></a><br />
-                <i>Technologies used: C</i>
-            </li>
-            <li>
-                <b>Application of an online forum</b><br /> View it on
-                <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%201"><i class="fa fa-github"></i></a> (part 1) and
-                <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%202"><i class="fa fa-github"></i></a> (part 2)<br />
-                <i>Technologies used: C++</i>
-            </li>
-            <li>
-                <b>A Simple RPG Game</b><br /> View it on
-                <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%203"><i class="fa fa-github"></i></a><br />
-                <i>Technologies used: C++</i>
-            </li>
-        </ul>
-        <h3 class="projectGenres">
-            Databases - Usage and Design:
-        </h3>
-        <ul>
-            <li>
-                <b>Design of a database for football games</b><br />View it on
-                <a href="https://github.com/ZapDos7/Databases1_2016/tree/master/3"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: MySQL, MySQL Workbench</i>
-            </li>
-            <li>
-                <b>Query executing/data inserting and extracting site with basic front
-          end</b><br />View it on
-                <a href="https://github.com/ZapDos7/Databases1_2016/tree/master/2"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: MySQL, bottle.py, HTML, Python</i>
-            </li>
-            <li>
-                <b>Ratings managing applet (with the ability to find positive and
-          negative scores and calculating scores)</b><br />View it on
-                <a href="https://github.com/ZapDos7/Databases1_2017/tree/master/assignment3_omada58"><i
-            class="fa fa-github"></i></a><br />
-                <i>Technologies used: SQLite, APSW</i>
-            </li>
-        </ul>
-        <h3 class="projectGenres">
-            Databases - Implementations:
-        </h3>
-        <ul>
-            <li>
-                <b>Implementation of block-level internal database functions - static
-          and extendible hashing</b><br /> View it on
-                <a href="https://github.com/ZapDos7/Databases2_2017/tree/master/ergasia_1/Ergasia%201%202016-2017"><i
-            class="fa fa-github"></i></a><br />
-                <i>Technologies Used: C</i>
-            </li>
-            <li>
-                <b>Implementation of block-level internal database functions -
-          sorting</b><br /> View it on
-                <a href="https://github.com/ZapDos7/Databases2_2017/tree/master/ergasia_2"><i
-            class="fa fa-github"></i></a><br />
-                <i>Technologies Used: C</i>
-            </li>
-        </ul>
-        <h3 class="projectGenres">
-            Graphics:
-        </h3>
-        <ul>
-            <li>
-                <b>Assisting in the graphics design</b> for the game
-                <a href="https://play.google.com/store/apps/details?id=com.Berrynauts.LaneSlide&hl=en">Lane Slide</a> by
-                <a href="http://halisavakis.com/berrynauts/">Berrynauts Entertainment</a>.<br />
-                <i>Technologies Used: Gimp, Windows 10</i>
-            </li>
-            <li>
-                <b>An OpenGL project of a starry sky, with planets and stars radiating
-          line</b><br /> View it on
-                <a href="https://github.com/ZapDos7/Starry_Sky"><i class="fa fa-github"></i></a><br />
-                <i>Technologies Used: C, C++, OpenGL</i>
-            </li>
-        </ul>
-        <h3 class="projectGenres">
-            Translation Projects:
-        </h3>
-                Using <a href="https://crowdin.com/">Crowdin's platform</a>, I have assisted in the English to Greek translations of
-                <ul class="translations-ul">
-                    <li><a href="https://code.org/">code.org</a></li>
-                    <li>
-                        <a href="https://www.originprotocol.com/en">Origin</a> (both the application and the website)
-                    </li>
-                    <li><a href="https://www.khanacademy.org/">Khan Academy</a></li>
-                    <li><a href="https://httpd.apache.org/">Apache</a></li>
-                    <li><a href="https://www.minecraft.net/en-us/">Minecraft</a></li>
-                </ul>
-        <div class="line-gray text-center">
-            <span></span>
+<div class="container-fluid" id="projects">
+    <h2 class="title" data-key="projects_header">
+        My Projects
+    </h2>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Java & Spring Boot</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>Beer Rating App</b> (WIP)
+                    <a href="https://github.com/ZapDos7/beer-app/tree/main"><i class="fa fa-github fa-2xl"></i></a><br/>
+                    <i>Technologies used: Java, Spring Boot, MySQL, Flyway, Mockito, Junit</i>
+                </li>
+                <li>
+                    <b>Example Code for Design Patterns in Java</b>
+                    <a href="https://github.com/ZapDos7/design-patterns-examples"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: Java</i>
+                </li>
+                <li>
+                    <b>Java Problems</b> (WIP)
+                    <a href="https://github.com/ZapDos7/java-problems"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: Java</i>
+                </li>
+                <li>
+                    <b>Sample Testing Application for <a
+                            href="https://www.regeneration.gr/en/regen-academy/4women-in-software-quality-assurance-testing/">ReGeneration's
+                        QA Academy</a></b>
+                    <a href="https://github.com/ZapDos7/SampleTestWithJunitAndSelenium"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: Java, Selenium</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">AI/Prompting Projects & Machine Learning</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>My solutions to Lakera's <a href="https://gandalf.lakera.ai/">Gandalf</a></b>
+                    <a href="https://github.com/ZapDos7/lakera-gandalf"><i class="fa fa-github"></i></a><br/>
+                </li>
+                <li>
+                    <b>My solutions to Harvard's <a href="https://gandalf.lakera.ai/cs50">Ready Player 50 Duck
+                        Challenge</a></b>
+                    <a href="https://github.com/ZapDos7/lakera-cs50-duck"><i class="fa fa-github"></i></a><br/>
+                </li>
+                <li>
+                    <b>Machine Learning Project</b> for the course "Machine Learning Techniques", Spring Semester
+                    2017-18.
+                    <a href="https://github.com/ZapDos7/MachineLearning2018"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: Python 2.7, Anaconda, Scikit-learn, Pandas &
+                        NumPy</i>
+                </li>
+                <li>
+                    <b>Nearest Neighbours Problem (part1): LSH (based on Manhattan
+                        Distance) & Random Projection on Hypercube for d-dimensional vectors
+                        and polygonal curves</b>
+                    <a href="https://github.com/ZapDos7/project1"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: C++</i>
+                </li>
+                <li>
+                    <b>Nearest Neighbours Problem (part2): Clustering implementation of
+                        k-means & k-medoids for d-dimensional vectors and polygonal
+                        curves</b>
+                    <a href="https://github.com/ZapDos7/project2"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: C++</i>
+                </li>
+                <li>
+                    <b>Nearest Neighbours Problem (part3): Prognosis of Wind Intensity
+                        with pre-trained Deep Neural Network</b>
+                    <a href="https://github.com/ZapDos7/project3"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: Python 3.7, Keras API, Tensorflow</i>
+                </li>
+                <li>
+                    <b>General Projects for Udacity's
+                        <a href="https://classroom.udacity.com/courses/ud120/">Machine Learning Course</a> </b>
+                    <a href="https://github.com/ZapDos7/MachineLearning"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: Python 2.7, Anaconda, Scikit-learn, Pandas &
+                        NumPy</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Web Development Projects</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>Front and Back end Development of a sample site for the Web
+                        Development Academy by CollegeLink (17/10 - 30/10/2017)</b>
+                    <a href="https://github.com/ZapDos7/WDA_Project"><i class="fa fa-github"></i></a> or
+                    <a href="https://codepen.io/IoannaZapalidi/pen/EbyGKq"><i class="fa fa-codepen"></i></a><br/>
+                    <i>Technologies used: HTML, CSS, JavaScript, PHP, SQL</i>
+                </li>
+                <li>
+                    <b>Amelioration of the site for the
+                        <a href="http://www.ika.gr">Social Insurance Institute</a> of
+                        Greece</b>
+                    <a href="https://github.com/ZapDos7/HCI_IKA"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: HTML, CSS, JavaScript, PHP, SQL</i>
+                </li>
+                <li>
+                    <b>Auction website</b>
+                    <a href="https://github.com/chris94dim/auctionWebForDi"><i class="fa fa-github"></i></a>
+                    <i>Technologies used: HTML, CSS - Bootstrap, ReactJS, Django with REST
+                        Api</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Applications (with imperative and object-oriented implementations)</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>Disease Monitoring Application</b> <a href="https://github.com/ZapDos7/syspro1"><i
+                        class="fa fa-github"></i></a><br>
+                    <i>Technologies used: C++</i>
+                </li>
+                <li>
+                    <b>Disease Monitoring Application (using multiple processes)</b> <a
+                        href="https://github.com/ZapDos7/syspro2"><i class="fa fa-github"></i></a><br>
+                    <i>Technologies used: C++</i>
+                </li>
+                <li>
+                    <b>Disease Monitoring Application over Network</b> <a href="https://github.com/ZapDos7/syspro3"><i
+                        class="fa fa-github"></i></a><br>
+                    <i>Technologies used: C++</i>
+                </li>
+                <li>
+                    <b>Application of queue of customers and multiple cash desks</b>
+                    <a href="https://github.com/ZapDos7/Data_Structures_2015/tree/master/Ergasia1"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: C</i>
+                </li>
+                <li>
+                    <b>Application of Electronic menu for restaurants</b>
+                    <a href="https://github.com/ZapDos7/Data_Structures_2015/tree/master/Ergasia2"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: C</i>
+                </li>
+                <li>
+                    <b>Application of airport functions</b>
+                    <a href="https://github.com/ZapDos7/Data_Structures_2015/tree/master/Ergasia3"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: C</i>
+                </li>
+                <li>
+                    <b>Application of an online forum</b>
+                    <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%201"><i class="fa fa-github"></i></a>
+                    (part 1) and
+                    <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%202"><i class="fa fa-github"></i></a>
+                    (part 2)<br/>
+                    <i>Technologies used: C++</i>
+                </li>
+                <li>
+                    <b>A Simple RPG Game</b>
+                    <a href="https://github.com/ZapDos7/OOP_Cpp_2015/tree/master/EXER%203"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: C++</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Databases - Usage and Design</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>Design of a database for football games</b>
+                    <a href="https://github.com/ZapDos7/Databases1_2016/tree/master/3"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: MySQL, MySQL Workbench</i>
+                </li>
+                <li>
+                    <b>Query executing/data inserting and extracting site with basic front end</b>
+                    <a href="https://github.com/ZapDos7/Databases1_2016/tree/master/2"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: MySQL, bottle.py, HTML, Python</i>
+                </li>
+                <li>
+                    <b>Ratings managing applet (with the ability to find positive and
+                        negative scores and calculating scores)</b>
+                    <a href="https://github.com/ZapDos7/Databases1_2017/tree/master/assignment3_omada58"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies used: SQLite, APSW</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Databases - Implementations</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>Implementation of block-level internal database functions - static
+                        and extendible hashing</b>
+                    <a href="https://github.com/ZapDos7/Databases2_2017/tree/master/ergasia_1/Ergasia%201%202016-2017"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: C</i>
+                </li>
+                <li>
+                    <b>Implementation of block-level internal database functions -
+                        sorting</b>
+                    <a href="https://github.com/ZapDos7/Databases2_2017/tree/master/ergasia_2"><i
+                            class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: C</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Graphics</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            <ul>
+                <li>
+                    <b>Assisting in the graphics design</b> for the game
+                    <a href="https://play.google.com/store/apps/details?id=com.Berrynauts.LaneSlide&hl=en">Lane
+                        Slide</a> by
+                    <a href="http://halisavakis.com/berrynauts/">Berrynauts Entertainment</a>.<br/>
+                    <i>Technologies Used: Gimp, Windows 10</i>
+                </li>
+                <li>
+                    <b>An OpenGL project of a starry sky, with planets and stars radiating
+                        line</b>
+                    <a href="https://github.com/ZapDos7/Starry_Sky"><i class="fa fa-github"></i></a><br/>
+                    <i>Technologies Used: C, C++, OpenGL</i>
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="project-group">
+        <summary class="group-header">
+            <h3 class="inline-h3">Translation Projects</h3>
+            <i class="fa fa-chevron-down"></i>
+        </summary>
+        <div class="group-content">
+            Using <a href="https://crowdin.com/">Crowdin's platform</a>, I have assisted in the English to Greek
+            translations of
+            <ul class="translations-ul">
+                <li><a href="https://code.org/">code.org</a></li>
+                <li>
+                    <a href="https://www.originprotocol.com/en">Origin</a> (both the application and the website)
+                </li>
+                <li><a href="https://www.khanacademy.org/">Khan Academy</a></li>
+                <li><a href="https://httpd.apache.org/">Apache</a></li>
+                <li><a href="https://www.minecraft.net/en-us/">Minecraft</a></li>
+            </ul>
+        </div>
+    </details>
+</div>
+<div class="container-fluid" id="seminars">
+    <h2 class="title" data-key="seminars_header">
+        Seminars - Certifications
+    </h2>
+    <ul>
+        <!-- <li> Full Stack Web Development Certification, issued by Free Code Camp on XX, YYYY </li> -->
+        <li>
+            2025
+            <ul>
+                <li data-key="cert_2025_1">AI Skills for Women, <a href="https://www.microsoft.com/">Microsoft</a></li>
+                <li data-key="cert_2025_2">Leadership in the Digital Era, <a href="https://grow.google/">Google</a></li>
+            </ul>
+        </li>
+        <li>
+            2024
+            <ul>
+                <li data-key="cert_2024_1"><a href="https://www.lakera.ai/">Lakera</a>'s 101 AI Security Course</li>
+            </ul>
+        </li>
+        <li>
+            2023
+            <ul>
+                <li data-key="cert_2023_1">Spring Boot: Test-Driven Development, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_2">Advanced Spring Boot Observability, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_3">Advanced Spring: Effective Integration Testing with Spring Boot, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_4">Advanced Spring: Application Events, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_5">Planning and Releasing Software with Jira, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_6">Learn Apache Kafka for Beginners, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_7">Foundational C# with <a href="https://www.microsoft.com/">Microsoft</a>, <a
+                        href="http://freecodecamp.org/">freeCodeCamp</a></li>
+                <li data-key="cert_2023_8">Learning the OWASP API Security Top 10, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_9">Artificial Intelligence for Cybersecurity, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2023_10">Generative AI, <a href="https://cloud.google.com/edu">Google Cloud
+                    Education</a>
+                </li>
+                <li data-key="cert_2023_11">Project Management: The Basics for Success, <a href="https://ce.uci.edu/">University
+                    of California, Irvine Division of Continuing Education</a>
+                </li>
+                <li data-key="cert_2023_12">Project Management: Technical Projects, <a href="https://www.pmi.org/">Project
+                    Management Institute</a>
+                </li>
+                <li data-key="cert_2023_13">Inspiring Leadership through Emotional Intelligence, <a
+                        href="https://case.edu/">Case Western Reserve University</a></li>
+            </ul>
+        </li>
+        <li>
+            2022
+            <ul>
+                <li data-key="cert_2022_1">ReGeneration Finalist for the <a
+                        href="https://www.regeneration.gr/en/regen-academy/4women-in-software-quality-assurance-testing/">ReGeneration
+                    Academy 4Women In Software Quality Assurance - Testing, Powered by MICROSOFT</a>
+                </li>
+                <li data-key="cert_2022_2">Microservices: Design Patterns, <a href="https://www.linkedin.com/learning/">LinkedIn
+                    Learning</a>
+                </li>
+                <li data-key="cert_2022_3">Designing RESTful APIs, <a href="https://www.linkedin.com/learning/">LinkedIn
+                    Learning</a>
+                </li>
+                <li data-key="cert_2022_4">Cloud NoSQL for SQL Professionals, <a
+                        href="https://www.linkedin.com/learning/">LinkedIn Learning</a></li>
+                <li data-key="cert_2022_5">Learning Docker, <a href="https://www.linkedin.com/learning/">LinkedIn
+                    Learning</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            2021
+            <ul>
+                <li data-key="cert_2021_1">Participant in the <a href="https://www.womentors.gr/en/home/">Womentors</a>
+                    Program of the <a href="https://www.lrf.gr/">Lambrakis Foundation</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            2019
+            <ul>
+                <li data-key="cert_2019_1">Cybersecurity in the Internet of Things Ecosystem, issued by <a
+                        href="https://idec.gr/en/">IDEC</a></li>
+                <li data-key="cert_2019_2">Multifaceted Leader: The Secrets of Executive Success in Troubled Times,
+                    issued by <a href="https://www.nyc.gr/">New York College</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            2018
+            <ul>
+                <li data-key="cert_2018_1">Leadership in Action, issued by <a href="https://www.nyc.gr/">New York
+                    College</a>
+                </li>
+                <li data-key="cert_2018_2">Presentation and Communication Skills - Leadership Skills, issued by <a
+                        href="https://www.britishcouncil.gr/en">British Council</a></li>
+            </ul>
+        </li>
+        <li>
+            2016
+            <ul>
+                <li data-key="cert_2016_1">C++ and Cryptography, issued by <a
+                        href="https://www.linkedin.com/company/thecube-athens/">The Cube Athens</a></li>
+                <li data-key="cert_2016_2"><a href="http://git-class.gr/">Git & GitHub</a>, issued by <a
+                        href="https://www.linkedin.com/company/thecube-athens/">The Cube Athens</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="container-fluid" id="contact">
+    <h2 class="title" data-key="find_me">
+        You can find me all around the web on the following links
+    </h2>
+    <div class="row align-items-center text-center" id="links">
+        <div>
+            <a href="https://github.com/ZapDos7/"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/ioanna-zapalidi/"><i class="fa fa-linkedin fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="mailto:ioanna.zapalidi@gmail.com" class="email-trigger">
+                <i class="fa fa-envelope fa-hover-hidden fa-2x"></i>
+                <i class="fa fa-envelope-open fa-hover-show fa-2x"></i>
+            </a>
+        </div>
+        <div>
+            <a href="https://stackoverflow.com/users/7436412/zap"><i class="fa fa-stack-overflow fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://www.freecodecamp.org/zapdos7"><i class="fa fa-brands fa-free-code-camp fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://learn.microsoft.com/el-gr/users/ioannazapalidi-4933/"><i
+                    class="fa fa-brands fa-windows fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://codepen.io/ZapDos7"><i class="fa fa-brands fa-codepen fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://g.dev/zapdos7"><i class="fa fa-brands fa-google fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://www.codingame.com/profile/b7c4b3dab6b414654ea11a923bc6ed5f8305384"><i
+                    class="fa fa-brands fa-cube fa-2x"></i></a>
+        </div>
+        <div>
+            <a href="https://leetcode.com/u/ZapDos7/" style="color: #FFFFFF;">
+                <img src="/img/leetcode.svg" alt="LeetCode" class="custom-icon"/>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.spoj.com/users/zap7/" style="color: #FFFFFF;">
+                <img src="/img/spoj.svg" alt="Spoj" class="custom-icon"/>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.sololearn.com/en/profile/302047" style="color: #FFFFFF;">
+                <img src="/img/sololearn.svg" alt="SoloLearn" class="custom-icon"/>
+            </a>
         </div>
     </div>
-
-    <div class="container-fluid" id="seminars">
-        <h2 class="title">
-            Seminars - Certifications
-        </h2>
-        <ul>
-            <!-- <li> <b>Full Stack Web Development Certification</b>, issued by Free Code Camp on XX, YYYY </li> -->
-            <li>ReGeneration Finalist for the <b><a href="https://www.regeneration.gr/en/regen-academy/4women-in-software-quality-assurance-testing/">ReGeneration Academy 4Women In Software Quality Assurance - Testing, Powered by MICROSOFT</a></b>, 2022</li>
-            <li>Participant in the <b><a href="https://www.womentors.gr/en/home/">Womentors</a> Program of the <a href="https://www.lrf.gr/">Lambrakis Foundation</a></b>, 2021-2022</li>
-            <li><b>Security Workshop</b>, issued by IDEC on October 2019</li>
-            <li>Member of <b><a href="https://gdsc.community.dev/national-and-kapodistrian-university-of-athens/">National and Kapodistrian University of Athens Google Dev Community</a></b></li>
-            <li><b>Leadership in Action</b>, issued by New York College on April 2018</li>
-            <li><b>Presentation and Communication Skills - Leadership Skills</b>, issued by British Council on April 2018</li>
-            <li><b>Multifaceted Leader: The Secrets of Executive Success in Troubled Times</b>, issued by New York College on March 2019</li>
-            <li><b>C++ and Cryptography</b>, issued by The Cube Athens on December 2016</li>
-            <li><b>Grow Greek Tourism Online</b>, issued by Google on September 2016</li>
-            <li><b><a href="http://git-class.gr/">Git & GitHub</a></b>, issued by The Cube Athens on May 2016</li>
-            <li><b>C, Ruby, jQuery, C#, JavaScript, Python 3, Java, C++, PHP Tutorials</b>, issued by SoloLearn</li>
-            <li><b>Swift 4, CSS, HTML, SQL Fundamentals</b>, issued by SoloLearn</li>
-        </ul>
-        <div class="line-gray text-center">
-            <span></span>
+</div>
+<footer class="full-footer">
+    <div class="footer-content">
+        <div id="footer">
+            <h5>
+                Made with <i class="fa fa-heart"></i> and
+                <i class="fa fa-coffee"></i> in Greece <i class="fa fa-globe"></i>
+            </h5>
+            <h6>© Ioanna Zapalidi</h6>
         </div>
     </div>
-
-    <div class="container-fluid" id="contact">
-        <h2 class="title">
-            You can find me all around the web on the following links:
-        </h2>
-        <div class="row align-items-center text-center" id="links">
-            <div>
-                <a href="https://github.com/ZapDos7/"><i class="fa fa-github fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://www.linkedin.com/in/ioanna-zapalidi/"><i class="fa fa-linkedin fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="mailto:ioanna.zapalidi@gmail.com" class="email-trigger">
-                    <i class="fa fa-envelope fa-hover-hidden fa-2x"></i>
-                    <i class="fa fa-envelope-open fa-hover-show fa-2x"></i>
-                </a>
-            </div>
-            <div>
-                <a href="https://stackoverflow.com/users/7436412/zap"><i class="fa fa-stack-overflow fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://www.freecodecamp.org/zapdos7"><i class="fa fa-brands fa-free-code-camp fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://learn.microsoft.com/el-gr/users/ioannazapalidi-4933/"><i class="fa fa-brands fa-windows fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://codepen.io/ZapDos7"><i class="fa fa-brands fa-codepen fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://g.dev/zapdos7"><i class="fa fa-brands fa-google fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://www.codingame.com/profile/b7c4b3dab6b414654ea11a923bc6ed5f8305384"><i class="fa fa-brands fa-cube fa-2x"></i></a>
-            </div>
-            <div>
-                <a href="https://leetcode.com/u/ZapDos7/" style="color: #FFFFFF;">
-                    <img src="/img/leetcode.svg" alt="LeetCode" class="custom-icon" />
-                </a>
-            </div>
-            <div>
-                <a href="https://www.spoj.com/users/zap7/" style="color: #FFFFFF;">
-                    <img src="/img/spoj.svg" alt="Spoj" class="custom-icon" />
-                </a>
-            </div>
-            <div>
-                <a href="https://www.sololearn.com/en/profile/302047" style="color: #FFFFFF;">
-                    <img src="/img/sololearn.svg" alt="SoloLearn" class="custom-icon" />
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer class="full-footer">
-        <div class="footer-content">
-            <div id="footer">
-                <h5>
-                    Made with <i class="fa fa-heart"></i> and
-                    <i class="fa fa-coffee"></i> in Greece <i class="fa fa-globe"></i>
-                </h5>
-                <h6>© Ioanna Zapalidi</h6>
-            </div>
-        </div>
-    </footer>
+</footer>
 </body>
-
 </html>
