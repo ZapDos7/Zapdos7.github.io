@@ -174,9 +174,14 @@ details[open] .group-header i {
 
 /* --- Links & Sliding Underline --- */
 /* --- Selective Sliding Underline --- */
-
-/* Only target links in the nav, footer, and text lists */
 .nav-links a,
+#links a {
+    color: var(--frosted-blue);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+/* Only target links in the nav, footer, and text lists */
 .footer-content a,
 .container-fluid a,
 #links a {
