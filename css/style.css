@@ -168,7 +168,6 @@ details[open] .group-header i {
 .nav-links a {
     color: var(--light-gray);
     font-weight: 500;
-    padding: 10px 0;
     display: inline-block;
 }
 
